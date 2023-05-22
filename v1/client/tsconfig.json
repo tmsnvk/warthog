@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@config": [ "config/index.ts" ],
+      "@context": [ "context/index.ts" ],
+      "@constants/*": [ "constants/*" ],
+      "@custom-types/*": [ "custom-types/*" ],
+      "@hooks": [ "hooks/index.ts" ],
+      "@mainComponents": [ "components/main/index.ts" ],
+      "@pageComponents/*": [ "components/page/*" ],
+      "@pages": [ "pages/index.ts" ],
+      // "@servicesMD": [ "services/index.ts" ],
+      "@servicesPSQL/*": [ "services/pg/*" ],
+      "@sharedComponents/*": [ "components/shared/*" ],
+      "@theme/*": [ "theme/*" ],
+    },
+    "outDir": "dist",
+    "rootDir": "./src",
+    "target": "es6",
+    "lib": [ "dom", "dom.iterable", "esnext" ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx"
+  },
+  "include": [ "src/**/*.ts", "src/**/*.tsx", "src/**/*.js" ],
+  "exclude": [ "node_modules" ]
+}

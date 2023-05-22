@@ -1,0 +1,32 @@
+{
+  "name": "kujira-v3",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [
+    "axios",
+    "expressjs",
+    "nodejs",
+    "react",
+    "react-query",
+    "styled-components",
+    "typescript",
+    "webpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tmsnvk/kujira"
+  },
+  "bugs": {
+    "url": "https://github.com/tmsnvk/kujira/issues"
+  },
+  "homepage": "https://tamasnovak.net/newsindex/v3",
+  "author": "Tamas N. <dev@tamasnovak.net> https://linkedin.com/in/tamasnvk/",
+  "scripts": {
+    "config": "concurrently \"cd client && npm install && npm run dev\" \"cd server && npm install && npm run dev\"",
+    "dev": "concurrently \"cd client && npm run dev\" \"cd server && npm run dev\""
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
