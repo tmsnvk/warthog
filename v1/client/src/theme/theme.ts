@@ -1,13 +1,14 @@
 // css and theming.
 import { DefaultTheme } from 'styled-components';
 
-const seaShell = '#F0F0F0';
+const white = '#FFFFFF';
 const flatBlue = '#277DA1';
 const charcoal = '#32373B';
 const gainsBoro = '#DCDCDC';
 const mediumGray = '#7F7F7F';
+const mediumGrayLowTransparency = '#7F7F7F59';
 const lightSeaGreen = '#43AA8B';
-const mango = '#F9C74F';
+const seaShell = '#DFE1E5';
 const peachPuff = '#F5DFBB';
 const coralRed = '#F94144';
 
@@ -15,13 +16,14 @@ const theme: DefaultTheme = {
   color: {
     primaryDark: charcoal,
     primaryLight: mediumGray,
+    primaryLightLowTransparency: mediumGrayLowTransparency,
     secondary: flatBlue,
     tertiary: lightSeaGreen,
     error: coralRed,
   },
   colorBackground: {
-    primary: seaShell,
-    secondary: mango,
+    primary: white,
+    secondary: seaShell,
     tertiary: gainsBoro,
   },
   fontFamily: {

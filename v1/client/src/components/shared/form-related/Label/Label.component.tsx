@@ -1,10 +1,11 @@
 // component elements.
 import { LabelContainer } from './Label.styles';
-// component models.
+// component types.
+import { LabelType } from './Label.types';
 
 // ** Label | component ** //
 //
-const Label = ({ htmlFor, labelText }: any) => {
+const Label = ({ htmlFor, labelText }: LabelType) => {
   return (
     <LabelContainer htmlFor={htmlFor}>
       {labelText}

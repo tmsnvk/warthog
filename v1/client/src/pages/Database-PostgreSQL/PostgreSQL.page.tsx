@@ -1,12 +1,18 @@
-import { AddNewUser } from '@pageComponents/PostgreSQL';
+import {
+  AddNewUser,
+  FormContainer,
+  PageContainer,
+} from '@pageComponents/PostgreSQL';
 
 // ** PostgreSQL | page ** //
 //
 const PostgreSQL = () => {
   return (
-    <>
-      <AddNewUser />
-    </>
+    <PageContainer>
+      <FormContainer>
+        <AddNewUser />
+      </FormContainer>
+    </PageContainer>
   );
 };
 
