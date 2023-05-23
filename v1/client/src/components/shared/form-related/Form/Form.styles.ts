@@ -7,6 +7,4 @@ const Form = styled.form`
   margin: 0 0 0 10rem;
 `;
 
-export {
-  Form,
-};
+export default Form;

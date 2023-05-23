@@ -6,6 +6,7 @@ import {
   ErrorMessage,
   Form,
   InputField,
+  InputFieldContainer,
   Label,
 } from '@sharedComponents/form-related';
 import { LabelIcon } from '@sharedComponents/icon-styles';
@@ -27,63 +28,78 @@ const AddNewUser = () => {
 
   return (
     <Form method={'POST'} action={'/api/v1/pg/user/addNew'} id={'addNewUser'} onSubmit={handleSubmit(onSubmit)}>
-      <FlexContainer $direction={'row'}>
-        <LabelIcon icon={iconLibrary.faEnvelope}></LabelIcon>
-        <Label htmlFor={'userEmail'} labelText={'Email'} />
-      </FlexContainer>
-      <InputField
-        {...register('userEmail', {
-          required: { value: true, message: 'Fill in the field.' },
-        })}
-        type={'text'}
-        id={'userEmail'}
-        name={'userEmail'}
-        autoComplete={'off'}
-        placeholder={'enter user email address'}
-        $size={'normal'}
-        disabled={isSubmitting}
-      />
-      {(errors.userEmail?.message) && (<ErrorMessage errorMessage={errors.userEmail.message} />)}
-      <FlexContainer $direction={'row'}>
-        <FlexContainer $direction={'column'}>
-          <FlexContainer $direction={'row'}>
-            <LabelIcon icon={iconLibrary.faUser}></LabelIcon>
-            <Label htmlFor={'firstName'} labelText={'First name'} />
-          </FlexContainer>
-          <InputField
-            {...register('firstName', {
-              required: { value: true, message: 'Fill in the field.' },
-            })}
-            type={'text'}
-            id={'firstName'}
-            name={'firstName'}
-            autoComplete={'off'}
-            placeholder={'enter user first name'}
-            $size={'short'}
-            disabled={isSubmitting}
-          />
-          {(errors.firstName?.message) && (<ErrorMessage errorMessage={errors.firstName.message} />)}
+      <InputFieldContainer>
+        <FlexContainer $direction={'row'}>
+          <LabelIcon icon={iconLibrary.faEnvelope}></LabelIcon>
+          <Label htmlFor={'userEmail'} labelText={'Email'} />
         </FlexContainer>
-        <FlexContainer $direction={'column'}>
-          <FlexContainer $direction={'row'}>
-            <LabelIcon icon={iconLibrary.faUsers}></LabelIcon>
-            <Label htmlFor={'lastname'} labelText={'Last name'} />
+        <InputField
+          {...register('userEmail', {
+            required: { value: true, message: 'Providing an email address is required.' },
+            pattern: { value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/, message: 'Enter a valid email.' },
+          })}
+          type={'text'}
+          id={'userEmail'}
+          name={'userEmail'}
+          autoComplete={'off'}
+          placeholder={'enter user email address'}
+          $size={'normal'}
+          $isError={errors.userEmail?.message !== undefined}
+          disabled={isSubmitting}
+        />
+        {(errors.userEmail?.message) && (<ErrorMessage errorMessage={errors.userEmail.message} />)}
+      </InputFieldContainer>
+      <FlexContainer $direction={'row'}>
+        <InputFieldContainer>
+          <FlexContainer $direction={'column'}>
+            <FlexContainer $direction={'row'}>
+              <LabelIcon icon={iconLibrary.faUser}></LabelIcon>
+              <Label htmlFor={'firstName'} labelText={'First name'} />
+            </FlexContainer>
+            <InputField
+              {...register('firstName', {
+                required: { value: true, message: 'Providing a first name is required.' },
+                pattern: { value: /^[A-Za-z0-9]+$/i, message: 'Use only letters and numbers.' },
+              })}
+              type={'text'}
+              id={'firstName'}
+              name={'firstName'}
+              autoComplete={'off'}
+              placeholder={'enter user first name'}
+              $size={'short'}
+              $isError={errors.firstName?.message !== undefined}
+              disabled={isSubmitting}
+            />
+            {(errors.firstName?.message) && (<ErrorMessage errorMessage={errors.firstName.message} />)}
           </FlexContainer>
-          <InputField
-            {...register('lastName', {
-              required: { value: true, message: 'Fill in the field.' },
-            })}
-            type={'text'}
-            id={'lastName'}
-            name={'lastName'}
-            autoComplete={'off'}
-            placeholder={'enter user last name'}
-            $size={'short'}
-            disabled={isSubmitting}
-          />
-          {(errors.lastName?.message) && (<ErrorMessage errorMessage={errors.lastName.message} />)}
-        </FlexContainer>
+        </InputFieldContainer>
+        <InputFieldContainer>
+          <FlexContainer $direction={'column'}>
+            <FlexContainer $direction={'row'}>
+              <LabelIcon icon={iconLibrary.faUsers}></LabelIcon>
+              <Label htmlFor={'lastname'} labelText={'Last name'} />
+            </FlexContainer>
+            <InputField
+              {...register('lastName', {
+                required: { value: true, message: 'Providing a first name is required.' },
+                pattern: { value: /^[A-Za-z0-9]+$/i, message: 'Use only letters and numbers.' },
+              })}
+              type={'text'}
+              id={'lastName'}
+              name={'lastName'}
+              autoComplete={'off'}
+              placeholder={'enter user last name'}
+              $size={'short'}
+              $isError={errors.firstName?.message !== undefined}
+              disabled={isSubmitting}
+            />
+            {(errors.lastName?.message) && (<ErrorMessage errorMessage={errors.lastName.message} />)}
+          </FlexContainer>
+        </InputFieldContainer>
       </FlexContainer>
+      <InputFieldContainer>
+
+      </InputFieldContainer>
       {(isSubmitting) ? (<LoadingModal loadingMessage={'Wait.'} />) : (<input type={'submit'} value={'add new user'} />)}
     </Form >
   );

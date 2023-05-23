@@ -14,12 +14,11 @@ const setSize = ($size: string) => {
 const InputField = styled.input<InputFieldTypes>`
   width: ${({ $size }) => setSize($size)};
   height: 6rem;
-  margin: 0 0 2.5rem 0;
   padding: 0 0 1rem 2.5rem;
   font-size: 1.4rem;
   font-weight: bold;
   background-color: transparent;
-  border: 0.1rem solid ${({ theme }) => theme.colorBackground.secondary};
+  border: 0.1rem solid ${({ theme, $isError }) => $isError ? theme.color.error : theme.colorBackground.secondary};
   border-radius: 1rem;
   
   &:hover {
@@ -38,6 +37,4 @@ const InputField = styled.input<InputFieldTypes>`
   }
 `;
 
-export {
-  InputField,
-};
+export default InputField;

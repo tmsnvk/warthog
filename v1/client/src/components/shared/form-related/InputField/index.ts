@@ -1,5 +1,3 @@
-import { InputField } from './InputField.styles';
+import InputField from './InputField.styles';
 
-export {
-  InputField,
-};
+export default InputField;
