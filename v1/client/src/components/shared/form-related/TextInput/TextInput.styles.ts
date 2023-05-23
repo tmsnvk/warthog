@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { InputFieldTypes } from './InputField.types';
+import { TextInputType } from './TextInput.types';
 
 const setSize = ($size: string) => {
   switch ($size) {
@@ -11,7 +11,7 @@ const setSize = ($size: string) => {
   }
 };
 
-const InputField = styled.input<InputFieldTypes>`
+const TextInput = styled.input<TextInputType>`
   width: ${({ $size }) => setSize($size)};
   height: 6rem;
   padding: 0 0 1rem 2.5rem;
@@ -32,9 +32,10 @@ const InputField = styled.input<InputFieldTypes>`
   &:focus {
     outline: ${({ theme }) => theme.colorBackground.secondary};
   }
+
   &:focus::placeholder {
     color: transparent;
   }
 `;
 
-export default InputField;
+export default TextInput;

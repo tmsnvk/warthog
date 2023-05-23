@@ -1,4 +1,4 @@
-export type InputFieldTypes = {
+export type TextInputType = {
   $size: string;
   $isError: boolean;
 }

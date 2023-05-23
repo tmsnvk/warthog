@@ -2,7 +2,7 @@
 import { IconLookup } from '@fortawesome/fontawesome-svg-core';
 
 type IconLibraryConfigType = {
-  addressCard: IconLookup;
+  faAddressCard: IconLookup;
   faEnvelope: IconLookup;
   faUser: IconLookup;
   faUsers: IconLookup;
@@ -27,7 +27,7 @@ type IconLibraryConfigType = {
 };
 
 const iconLibrary: IconLibraryConfigType = {
-  addressCard: { prefix: 'fas', iconName: 'address-card' },
+  faAddressCard: { prefix: 'fas', iconName: 'address-card' },
   faEnvelope: { prefix: 'fas', iconName: 'envelope' },
   faUser: { prefix: 'fas', iconName: 'user' },
   faUsers: { prefix: 'fas', iconName: 'users' },
