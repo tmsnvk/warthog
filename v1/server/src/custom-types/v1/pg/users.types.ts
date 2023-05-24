@@ -12,7 +12,7 @@ export type AddNewUserQueryType = {
 }
 
 export type AddNewUserReturnType = {
-  pgCommand: string;
-  tableName?: string;
+  pgCommandOpen: string;
   dataFields: (string | number)[];
+  pgCommandClose: string | undefined;
 }[]

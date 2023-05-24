@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FlexContainerTypes } from './AddNewUser.types';
+import { FlexContainerTypes } from './AddNewUserForm.types';
 
 const setDirection = ($direction: string) => {
   switch ($direction) {

@@ -33,13 +33,14 @@ const userService = {
 
       const dataToVisualise = [
         {
-          pgCommand: 'INSERT INTO',
-          tableName: 'student_person_data',
+          pgCommandOpen: 'INSERT INTO student_personal_data (',
           dataFields: ['email', 'first_name', 'last_name', 'user_id', 'user_type', 'created_at'],
+          pgCommandClose: ')',
         },
         {
-          pgCommand: 'VALUES',
-          dataFields: [email, firstName, lastName, userRole, userId, rows[0].created_at],
+          pgCommandOpen: 'VALUES (',
+          dataFields: [email, firstName, lastName, userRole, userId, new Date(rows[0].created_at).toLocaleString()],
+          pgCommandClose: ');',
         },
       ];
 

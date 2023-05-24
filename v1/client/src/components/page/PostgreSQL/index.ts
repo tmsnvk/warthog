@@ -1,9 +1,13 @@
-import AddNewUser from './AddNewUser/AddNewUser.component';
+import AddNewUserData from './AddNewUserData';
+import AddNewUserForm from './AddNewUserForm';
 import FormContainer from './FormContainer';
 import PageContainer from './PageContainer';
+import VisualiseDataContainer from './VisualiseDataContainer';
 
 export {
-  AddNewUser,
+  AddNewUserData,
+  AddNewUserForm,
   FormContainer,
   PageContainer,
+  VisualiseDataContainer,
 };

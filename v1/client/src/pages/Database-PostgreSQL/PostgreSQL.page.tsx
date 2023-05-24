@@ -1,7 +1,9 @@
 import {
-  AddNewUser,
+  AddNewUserData,
+  AddNewUserForm,
   FormContainer,
   PageContainer,
+  VisualiseDataContainer,
 } from '@pageComponents/PostgreSQL';
 
 // ** PostgreSQL | page ** //
@@ -10,8 +12,11 @@ const PostgreSQL = () => {
   return (
     <PageContainer>
       <FormContainer>
-        <AddNewUser />
+        <AddNewUserForm />
       </FormContainer>
+      <VisualiseDataContainer>
+        <AddNewUserData />
+      </VisualiseDataContainer>
     </PageContainer>
   );
 };

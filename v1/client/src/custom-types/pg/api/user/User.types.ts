@@ -8,12 +8,10 @@ export type AddNewUserParameterType = {
 
 export type AddNewUserReturnType = {
   data: {
-    userEmail: string;
-    firstName: string;
-    lastName: string;
-    userRole: string;
-    createdAt: string;
-  }
+    pgCommand: string;
+    tableName?: string;
+    dataFields: string[];
+  }[]
 }
 
 export type AddNewUserErrorType = {
