@@ -118,11 +118,6 @@ const AddNewUser = () => {
             {...register('userRole', {
               required: { value: true, message: 'Choosing a user category is required.' },
             })}
-            options={[
-              { value: '', label: 'Select a role.' },
-              { value: 'student', label: 'student' },
-              { value: 'mentor', label: 'mentor' },
-            ]}
             name={'userRole'}
             autoComplete={'off'}
             $size={'short'}
