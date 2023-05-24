@@ -14,11 +14,11 @@ import {
 // ** studentGetAllController | contoller function ** //
 //
 const addNewStudentController = async (request: Request, response: Response<any>): Promise<void> => {
-  const { email, firstName, lastName } = request.body;
+  const { email, firstName, lastName, userRole } = request.body;
 
   try {
     const userId: string = uuidv4();
-    const serviceResponse: AddNewUserReturnType | undefined = await userService.addNew(email, firstName, lastName, userId);
+    const serviceResponse: AddNewUserReturnType | undefined = await userService.addNew(email, firstName, lastName, userRole, userId);
 
     response.status(200).send(serviceResponse);
   } catch (error: unknown) {

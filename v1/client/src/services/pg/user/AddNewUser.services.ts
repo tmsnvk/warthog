@@ -17,7 +17,7 @@ const AddNewUser = {
         email: formData.userEmail,
         firstName: formData.firstName,
         lastName: formData.lastName,
-        role: formData.userCategory,
+        userRole: formData.userRole,
       },
     });
   },

@@ -8,6 +8,7 @@ declare module 'styled-components' {
       primaryLightLowTransparency: string;
       secondary: string;
       tertiary: string;
+      white: string;
       error: string;
     },
     colorBackground: {

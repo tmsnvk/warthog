@@ -19,12 +19,13 @@ const theme: DefaultTheme = {
     primaryLightLowTransparency: mediumGrayLowTransparency,
     secondary: flatBlue,
     tertiary: lightSeaGreen,
+    white: white,
     error: coralRed,
   },
   colorBackground: {
     primary: white,
     secondary: seaShell,
-    tertiary: gainsBoro,
+    tertiary: flatBlue,
   },
   fontFamily: {
     main: `"Roboto", sans-serif`,

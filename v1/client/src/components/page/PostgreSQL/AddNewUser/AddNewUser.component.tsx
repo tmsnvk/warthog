@@ -8,6 +8,7 @@ import {
   InputContainer,
   Label,
   SelectInput,
+  Submit,
   TextInput,
 } from '@sharedComponents/form-related';
 import { LabelIcon } from '@sharedComponents/icon-styles';
@@ -133,7 +134,7 @@ const AddNewUser = () => {
           {(errors.userRole?.message) && (<ErrorMessage errorMessage={errors.userRole.message} />)}
         </FlexContainer>
       </InputContainer>
-      {(isSubmitting) ? (<LoadingModal loadingMessage={'Wait.'} />) : (<input type={'submit'} value={'add new user'} />)}
+      {(isSubmitting) ? (<LoadingModal loadingMessage={'Wait.'} />) : (<Submit type={'submit'} value={'submit query'} />)}
     </Form >
   );
 };

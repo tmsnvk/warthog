@@ -7,7 +7,7 @@ const FormContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   height: auto;
-  border: 1px red solid;
+  border-radius: 1rem;
 `;
 
 export default FormContainer;

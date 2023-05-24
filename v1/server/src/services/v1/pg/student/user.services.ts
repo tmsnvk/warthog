@@ -9,15 +9,15 @@ import {
 // ** userService | service object ** //
 //
 const userService = {
-  async addNew(email: string, firstName: string, lastName: string, userId: string): Promise<AddNewUserReturnType | undefined> {
+  async addNew(email: string, firstName: string, lastName: string, userRole: string, userId: string): Promise<AddNewUserReturnType | undefined> {
     try {
       const { rows }: AddNewUserQueryType = await pool.query(`
         INSERT INTO student_personal_data (
           email,
           first_name,
           last_name,
-          user_id,
-          user_type
+          user_type,
+          user_id
         )
 
         VALUES (
@@ -25,11 +25,11 @@ const userService = {
           $2,
           $3,
           $4,
-          'student'
+          $5
         )
         RETURNING
           created_at;
-      `, [email, firstName, lastName, userId]);
+      `, [email, firstName, lastName, userRole, userId]);
 
       const dataToVisualise = [
         {
@@ -39,7 +39,7 @@ const userService = {
         },
         {
           pgCommand: 'VALUES',
-          dataFields: [email, firstName, lastName, userId, 'student', rows[0].created_at],
+          dataFields: [email, firstName, lastName, userRole, userId, rows[0].created_at],
         },
       ];
 
