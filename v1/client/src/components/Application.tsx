@@ -16,7 +16,7 @@ import {
 import {
   Introduction,
   MongoDB,
-  PostgreSQL,
+  PagePSQL,
 } from '@pages';
 // external packages.
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -44,7 +44,7 @@ const Application = () => {
           <Route path='/' element={<Navigate to={'/choose-database'} replace />} />
           <Route path={'/choose-database'} element={<Introduction />} />
           <Route path={'/db/mongodb'} element={<MongoDB />} />
-          <Route path={'/db/postgresql'} element={<PostgreSQL />} />
+          <Route path={'/db/postgresql'} element={<PagePSQL />} />
           {/* <Route path="*" element={<PageNotFound />} /> */}
         </Routes>
       </QueryClientProvider>

@@ -5,10 +5,10 @@ import { useSubmitForm } from './AddNewUserForm.hooks';
 import {
   ErrorMessage,
   Form,
+  GenericTypeSubmitInput,
   InputContainer,
   Label,
   SelectInput,
-  Submit,
   TextInput,
 } from '@sharedComponents/form-related';
 import { LabelIcon } from '@sharedComponents/icon-styles';
@@ -129,7 +129,7 @@ const AddNewUserForm = () => {
           {(errors.userRole?.message) && (<ErrorMessage errorMessage={errors.userRole.message} />)}
         </FlexContainer>
       </InputContainer>
-      {(isSubmitting) ? (<LoadingModal loadingMessage={'Wait.'} />) : (<Submit type={'submit'} value={'submit query'} />)}
+      {(isSubmitting) ? (<LoadingModal loadingMessage={'Wait.'} />) : (<GenericTypeSubmitInput type={'submit'} value={'submit query'} />)}
     </Form >
   );
 };

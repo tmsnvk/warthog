@@ -1,3 +1,3 @@
-import PostgreSQL from './PostgreSQL.page';
+import PostgreSQL from './PagePSQL.page';
 
 export default PostgreSQL;

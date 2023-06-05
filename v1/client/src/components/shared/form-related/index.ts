@@ -3,7 +3,7 @@ import Form from './Form/Form.styles';
 import InputContainer from './InputContainer';
 import Label from './Label';
 import SelectInput from './SelectInput';
-import Submit from './Submit';
+import GenericTypeSubmitInput from './GenericTypeSubmitInput';
 import TextInput from './TextInput';
 
 export {
@@ -12,6 +12,6 @@ export {
   InputContainer,
   Label,
   SelectInput,
-  Submit,
+  GenericTypeSubmitInput,
   TextInput,
 };
