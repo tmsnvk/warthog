@@ -10,7 +10,6 @@
       "@mainComponents": [ "components/main/index.ts" ],
       "@pageComponents/*": [ "components/page/*" ],
       "@pages": [ "pages/index.ts" ],
-      "@individualPages/*": [ "pages/*" ],
       // "@servicesMD": [ "services/index.ts" ],
       "@servicesPSQL/*": [ "services/pg/*" ],
       "@sharedComponents/*": [ "components/shared/*" ],

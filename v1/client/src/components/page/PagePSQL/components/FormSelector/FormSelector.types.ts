@@ -1,4 +1,4 @@
-import { FormOptionsT } from '@individualPages/Database-PostgreSQL/PagePSQL.types';
+import { FormOptionsT } from '@pageComponents/PagePSQL/types/PagePSQL.types';
 
 export type FormSelectorT = {
   options: FormOptionsT;

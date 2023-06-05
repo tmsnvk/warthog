@@ -1,6 +1,6 @@
 import Introduction from './Introduction';
 import MongoDB from './Database-MongoDB';
-import PagePSQL from './Database-PostgreSQL';
+import PagePSQL from './PagePSQL';
 
 export {
   Introduction,

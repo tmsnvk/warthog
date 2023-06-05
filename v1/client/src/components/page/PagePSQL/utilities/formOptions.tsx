@@ -1,4 +1,6 @@
-import { AddNewUserForm } from '@pageComponents/PostgreSQL';
+import {
+  AddNewUserForm,
+} from '@pageComponents/PagePSQL/components';
 
 const formOptions = [
   {
@@ -21,6 +23,4 @@ const formOptions = [
   },
 ];
 
-export {
-  formOptions,
-};
+export default formOptions;

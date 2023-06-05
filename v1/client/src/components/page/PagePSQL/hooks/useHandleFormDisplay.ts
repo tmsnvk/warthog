@@ -1,8 +1,8 @@
 // react and eco.
 import { useState } from 'react';
-import { formOptions } from './PagePSQL.utilities';
+import { formOptions } from '../utilities';
 // component types.
-import { FormOptionsT } from './PagePSQL.types';
+import { FormOptionsT } from '../types/PagePSQL.types';
 
 // ** useHandleFormDisplay | custom hook ** //
 //
@@ -29,17 +29,4 @@ const useHandleFormDisplay = (): { options: FormOptionsT, handleClick(btnName: s
   };
 };
 
-// ** useFindActiveOptionIndex | custom hook ** //
-//
-const useFindActiveOptionIndex = (options: FormOptionsT): number => {
-  const activeOptionIndex = options.findIndex((option) => {
-    return option.isActive;
-  });
-
-  return activeOptionIndex;
-};
-
-export {
-  useHandleFormDisplay,
-  useFindActiveOptionIndex,
-};
+export default useHandleFormDisplay;

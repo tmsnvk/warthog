@@ -1,11 +1,7 @@
-// react and eco.
-
 // component elements.
 import { OptionButton } from './FormSelector.styles';
 // component types.
-import { FormOptionsT } from '@individualPages/Database-PostgreSQL/PagePSQL.types';
 import { FormSelectorT } from './FormSelector.types';
-
 
 // ** useGenerateFormBtns | custom hook ** //
 //

@@ -2,7 +2,7 @@
 import {
   useFindActiveOptionIndex,
   useHandleFormDisplay,
-} from './PagePSQL.hooks';
+} from '@pageComponents/PagePSQL/hooks';
 // component elements.
 import {
   AddNewUserData,
@@ -10,7 +10,7 @@ import {
   FormSelector,
   PageContainer,
   VisualiseDataContainer,
-} from '@pageComponents/PostgreSQL';
+} from '@pageComponents/PagePSQL/components';
 
 // ** PostgreSQL | page ** //
 //

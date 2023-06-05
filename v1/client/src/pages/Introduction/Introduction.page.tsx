@@ -1,4 +1,4 @@
-import { ChoiceBox } from '@pageComponents/Introduction';
+import { ChoiceBox } from '@pageComponents/Introduction/components';
 
 // ** Introduction | page ** //
 //

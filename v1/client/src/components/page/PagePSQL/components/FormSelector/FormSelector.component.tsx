@@ -1,5 +1,5 @@
 // react and eco.
-import { useFindActiveOptionIndex } from '@individualPages/Database-PostgreSQL/PagePSQL.hooks';
+import { useFindActiveOptionIndex } from '@pageComponents/PagePSQL/hooks';
 import { useGenerateFormBtns } from './FormSelector.hooks';
 // component elements.
 import {
