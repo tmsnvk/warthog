@@ -1,6 +1,6 @@
 // react and eco.
 import { useForm } from 'react-hook-form';
-import { useSubmitForm } from './AddNewUserForm.hooks';
+import { useSubmitForm } from './AddNewUserF.hooks';
 // component elements.
 import {
   ErrorMessage,
@@ -13,16 +13,16 @@ import {
 } from '@sharedComponents/form-related';
 import { LabelIcon } from '@sharedComponents/icon-styles';
 import { LoadingModal } from '@sharedComponents/modals';
-import { FlexContainer } from './AddNewUserForm.styles';
+import { FlexContainer } from './AddNewUserF.styles';
 // component utilities.
 import { iconLibrary } from '@config';
-import { roleOptions } from './AddNewUserForm.utilities';
+import { roleOptions } from './AddNewUserF.utilities';
 // component types.
 import { AddNewUserParameterType } from '@custom-types/pg/api/user/User.types';
 
-// ** AddNewUserForm | component ** //
+// ** AddNewUserF | component ** //
 //
-const AddNewUserForm = () => {
+const AddNewUserF = () => {
   // * react-hook-form setup * //
   const { formState: { isSubmitting, errors }, handleSubmit, register, setError } = useForm<AddNewUserParameterType>({ mode: 'onSubmit' });
 
@@ -134,4 +134,4 @@ const AddNewUserForm = () => {
   );
 };
 
-export default AddNewUserForm;
+export default AddNewUserF;

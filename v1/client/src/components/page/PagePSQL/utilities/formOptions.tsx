@@ -1,5 +1,5 @@
 import {
-  AddNewUserForm,
+  AddNewUserF,
 } from '@pageComponents/PagePSQL/components';
 
 const formOptions = [
@@ -7,7 +7,7 @@ const formOptions = [
     btnName: 'Add new user',
     btnDesc: 'Adds a new user to the database.',
     isActive: true,
-    formComponent: <AddNewUserForm />,
+    formComponent: <AddNewUserF />,
   },
   {
     btnName: 'Update user',
