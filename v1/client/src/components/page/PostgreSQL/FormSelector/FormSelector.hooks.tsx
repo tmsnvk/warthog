@@ -19,17 +19,6 @@ const useGenerateFormBtns = ({ options, handleClick }: FormSelectorT): JSX.Eleme
   return optionItems;
 };
 
-// ** useFindActiveOptionIndex | custom hook ** //
-//
-const useFindActiveOptionIndex = (options: FormOptionsT): number => {
-  const activeOptionIndex = options.findIndex((option) => {
-    return option.isActive;
-  });
-
-  return activeOptionIndex;
-};
-
 export {
-  useFindActiveOptionIndex,
   useGenerateFormBtns,
 };

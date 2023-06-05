@@ -1,5 +1,8 @@
 // react and eco.
-import { useHandleFormDisplay } from './PagePSQL.hooks';
+import {
+  useFindActiveOptionIndex,
+  useHandleFormDisplay,
+} from './PagePSQL.hooks';
 // component elements.
 import {
   AddNewUserData,
@@ -12,11 +15,8 @@ import {
 // ** PostgreSQL | page ** //
 //
 const PagePSQL = () => {
-  const { handleClick, options } = useHandleFormDisplay();
-
-  const activeFormIndex = options.findIndex((option) => {
-    return option.isActive;
-  });
+  const { options, handleClick } = useHandleFormDisplay();
+  const activeFormIndex = useFindActiveOptionIndex(options);
 
   return (
     <PageContainer>

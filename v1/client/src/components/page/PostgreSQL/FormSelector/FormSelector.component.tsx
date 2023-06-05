@@ -1,8 +1,6 @@
 // react and eco.
-import {
-  useFindActiveOptionIndex,
-  useGenerateFormBtns,
-} from './FormSelector.hooks';
+import { useFindActiveOptionIndex } from '@individualPages/Database-PostgreSQL/PagePSQL.hooks';
+import { useGenerateFormBtns } from './FormSelector.hooks';
 // component elements.
 import {
   ButtonContainer,
