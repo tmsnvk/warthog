@@ -1,23 +1,29 @@
+// component elements.
 import {
-  AddNewUserF,
+  AddNewUser,
+  ButtonDescription,
 } from '@pageComponents/PagePSQL/components';
+// component utilities.
+import {
+  addNewUser,
+} from '@pageComponents/PagePSQL/components/ButtonDescription/ButtonDescription.utilities';
 
 const formOptions = [
   {
     btnName: 'Add new user',
-    btnDesc: 'Adds a new user to the database.',
+    btnDesc: <ButtonDescription instructions={addNewUser} />,
     isActive: true,
-    formComponent: <AddNewUserF />,
+    formComponent: <AddNewUser />,
   },
   {
     btnName: 'Update user',
-    btnDesc: 'Selects an existing user from the database and updates it.',
+    btnDesc: <></>,
     isActive: false,
     formComponent: <></>,
   },
   {
     btnName: 'Delete user',
-    btnDesc: 'Selects an existing user from the database and removes it.',
+    btnDesc: <></>,
     isActive: false,
     formComponent: <></>,
   },

@@ -1,6 +1,6 @@
 import AddNewUserData from './AddNewUserData';
-import AddNewUserD from './btnDescComponents/AddNewUserD';
-import AddNewUserF from './formComponents/AddNewUserF';
+import ButtonDescription from './ButtonDescription';
+import AddNewUser from './formComponents/AddNewUser';
 import FormContainer from './FormContainer';
 import FormSelector from './FormSelector';
 import PageContainer from './PageContainer';
@@ -8,8 +8,8 @@ import VisualiseDataContainer from './VisualiseDataContainer';
 
 export {
   AddNewUserData,
-  AddNewUserD,
-  AddNewUserF,
+  ButtonDescription,
+  AddNewUser,
   FormContainer,
   FormSelector,
   PageContainer,

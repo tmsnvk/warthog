@@ -34,11 +34,6 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
     text-decoration: none;
   }
-
-  ul,
-  ol {
-    list-style: none;
-  }
 `;
 
 export default GlobalStyle;

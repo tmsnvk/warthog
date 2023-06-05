@@ -20,7 +20,7 @@ const ButtonContainer = styled.div`
 const DescriptionContainer = styled.div`
   display: flex;
   flex-direction: row;
-  width: 50rem;
+  width: 100%;
   height: auto;
   padding: 5rem 7.5rem 5rem 7.5rem;
   background-color: ${({ theme }) => theme.colorBackground.secondary};
