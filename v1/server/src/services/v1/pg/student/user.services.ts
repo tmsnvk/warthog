@@ -34,7 +34,7 @@ const userService = {
       const dataToVisualise = [
         {
           pgCommandOpen: 'INSERT INTO student_personal_data (',
-          dataFields: ['email', 'first_name', 'last_name', 'user_id', 'user_type', 'created_at'],
+          dataFields: ['email', 'first_name', 'last_name', 'user_type', 'user_id', 'created_at'],
           pgCommandClose: ')',
         },
         {

@@ -23,11 +23,11 @@ const GlobalStyle = createGlobalStyle`
   body {
     width: 100vw;
     height: 100vh;
-    background-color: ${({ theme }) => theme.colorBackground.primary};
     font-family: ${({ theme }) => theme.fontFamily.main};
     color: ${({ theme }) => theme.color.primaryDark};
     font-size: 62.5%;
     line-height: 1.5;
+    background-color: ${({ theme }) => theme.colorBackground.primary};
   }
 
   a {
@@ -35,7 +35,8 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
-  ul, ol {
+  ul,
+  ol {
     list-style: none;
   }
 `;

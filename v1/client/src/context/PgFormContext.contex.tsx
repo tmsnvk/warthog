@@ -24,7 +24,7 @@ type PgFormContextProvider = {
 export const PgFormContext = createContext<PgFormContext>({} as PgFormContext);
 
 export const PgFormContextProvider = ({ children }: PgFormContextProvider) => {
-  const [addNewUserQueryData, setAddNewUserQueryData] = useState<GeneralQueryDataType[]>([{ pgCommandOpen: 'INSERT INTO', dataFields: ['email', 'first_name', 'last_name'], pgCommandClose: '' }]);
+  const [addNewUserQueryData, setAddNewUserQueryData] = useState<GeneralQueryDataType[]>([{ pgCommandOpen: '', dataFields: ['', '', ''], pgCommandClose: '' }]);
 
   return (
     <PgFormContext.Provider value={{ addNewUserQueryData, setAddNewUserQueryData }}>

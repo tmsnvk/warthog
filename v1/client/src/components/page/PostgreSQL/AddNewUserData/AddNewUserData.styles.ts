@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ElementContainer = styled.div`
-  margin: 1.5rem 0 1.5rem 0;
+
 `;
 
 const Command = styled.p`
