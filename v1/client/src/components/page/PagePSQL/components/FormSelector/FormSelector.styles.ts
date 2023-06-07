@@ -1,5 +1,7 @@
 // external packages.
 import styled from 'styled-components';
+// component elements.
+import { GenericComponentContainer } from '@sharedComponents/wrappers';
 // component types.
 import { ButtonDescriptionT } from './FormSelector.types';
 
@@ -17,21 +19,18 @@ const ButtonContainer = styled.div`
   margin: 5rem 0 5rem 0;
 `;
 
-const DescriptionContainer = styled.div`
+const DescriptionContainer = styled(GenericComponentContainer)`
   display: flex;
   flex-direction: row;
   width: 100%;
   height: auto;
   padding: 5rem 7.5rem 5rem 7.5rem;
-  background-color: ${({ theme }) => theme.colorBackground.secondary};
-  border: 0.1rem ${({ theme }) => theme.colorBackground.tertiary} solid;
-  box-shadow: 0 0 0.5rem ${({ theme }) => theme.colorBackground.tertiary};
 `;
 
 const OptionButton = styled.button<ButtonDescriptionT>`
   align-self: center;
   width: auto;
-  height: 7rem;
+  height: 6rem;
   padding: 0 1rem 0 1rem;
   margin: 0 1.5rem 0 1.5rem;
   background-color: ${({ theme, $isActive }) => $isActive ? theme.colorBackground.secondary : theme.colorBackground.tertiary};
@@ -43,7 +42,7 @@ const OptionButton = styled.button<ButtonDescriptionT>`
   text-align: center;
   border: 0.3rem ${({ theme }) => theme.colorBackground.tertiary} solid;
   border-radius: 1rem;
-  box-shadow: ${({ theme, $isActive }) => $isActive ? `0 0 0.5rem ${theme.colorBackground.tertiary}` : null};
+  box-shadow: ${({ theme, $isActive }) => $isActive ? `0 0 0.5rem ${theme.colorBackground.tertiary}` : ''};
   cursor: pointer;
 
   &:hover {

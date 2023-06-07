@@ -70,7 +70,7 @@ const AddNewUser = () => {
               id={'firstName'}
               {...register('firstName', {
                 required: { value: true, message: 'Providing a first name is required.' },
-                pattern: { value: /^[A-Za-z0-9]+$/i, message: 'Use only letters and numbers.' },
+                pattern: { value: /^[A-Za-z0-9-\s]+$/i, message: 'Use only letters and numbers.' },
               })}
               type={'text'}
               name={'firstName'}
@@ -93,7 +93,7 @@ const AddNewUser = () => {
               id={'lastName'}
               {...register('lastName', {
                 required: { value: true, message: 'Providing a first name is required.' },
-                pattern: { value: /^[A-Za-z0-9]+$/i, message: 'Use only letters and numbers.' },
+                pattern: { value: /^[A-Za-z0-9-\s]+$/i, message: 'Use only letters and numbers.' },
               })}
               type={'text'}
               name={'lastName'}
@@ -130,7 +130,7 @@ const AddNewUser = () => {
         </FlexContainer>
       </InputContainer>
       {(isSubmitting) ? (<LoadingModal loadingMessage={'Wait.'} />) : (<GenericTypeSubmitInput type={'submit'} value={'submit query'} />)}
-    </Form >
+    </Form>
   );
 };
 

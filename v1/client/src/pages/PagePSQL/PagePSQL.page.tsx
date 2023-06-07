@@ -24,7 +24,7 @@ const PagePSQL = () => {
       <FormContainer>
         {options[activeFormIndex].formComponent}
       </FormContainer>
-      <VisualiseDataContainer>
+      <VisualiseDataContainer as={'section'}>
         <AddNewUserData />
       </VisualiseDataContainer>
     </PageContainer>
