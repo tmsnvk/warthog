@@ -1,5 +1,7 @@
+// external packages.
 import styled from 'styled-components';
-import { TextInputType } from './TextInput.types';
+// component types.
+import { TextInputT } from './TextInput.types';
 
 const setSize = ($size: string) => {
   switch ($size) {
@@ -11,7 +13,7 @@ const setSize = ($size: string) => {
   }
 };
 
-const TextInput = styled.input<TextInputType>`
+const TextInput = styled.input<TextInputT>`
   width: ${({ $size }) => setSize($size)};
   height: 6rem;
   padding: 0 0 0 2.5rem;

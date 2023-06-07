@@ -2,14 +2,14 @@
 import { axiosConfig } from '@config';
 // component types.
 import {
-  AddNewUserParameterType,
-  AddNewUserReturnType,
+  AddNewUserParameterT,
+  AddNewUserReturnT,
 } from '@custom-types/pg/api/user/User.types';
 
 // ** AddNewUser | service object ** //
 //
 const AddNewUser = {
-  addUser(formData: AddNewUserParameterType): Promise<AddNewUserReturnType> {
+  addUser(formData: AddNewUserParameterT): Promise<AddNewUserReturnT> {
     return axiosConfig.request({
       method: 'POST',
       url: '/api/v1/pg/user/addNew',

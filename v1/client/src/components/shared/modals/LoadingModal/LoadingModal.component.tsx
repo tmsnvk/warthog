@@ -1,21 +1,21 @@
 // component elements.
-// import { IconLight } from "@sharedComponents/iconStyles";
+import { LoadingSpinnerIcon } from '@sharedComponents/icon-styles';
 import {
   ModalContainer,
   ModalMessage,
 } from './LoadingModal.styles';
 // component utilities.
-// import { iconLibrary } from '@config';
-// component models.
-import { LoadingModalComponentType } from './LoadingModal.models';
+import { iconLibrary } from '@config';
+// component types.
+import { LoadingModalComponentT } from './LoadingModal.types';
 
 // ** LoadingModal | component ** //
 //
-const LoadingModal = ({ loadingMessage }: LoadingModalComponentType) => {
+const LoadingModal = ({ loadingMessage }: LoadingModalComponentT) => {
   return (
     <ModalContainer>
-      {/* <IconLight icon={iconLibrary.spinner} spin></IconLight> */}
       <ModalMessage>{loadingMessage}</ModalMessage>
+      <LoadingSpinnerIcon icon={iconLibrary.faSpinner} spin></LoadingSpinnerIcon>
     </ModalContainer>
   );
 };

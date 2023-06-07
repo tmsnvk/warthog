@@ -1,40 +1,37 @@
 // react and eco.
 import { useForm } from 'react-hook-form';
-import { useSubmitForm } from './AddNewUser.hooks';
+import {
+  useGenerateOptions,
+  useSubmitForm,
+} from './AddNewUser.hooks';
 // component elements.
 import {
   ErrorMessage,
   Form,
-  GenericTypeSubmitInput,
   InputContainer,
   Label,
   SelectInput,
+  SubmitInput,
   TextInput,
 } from '@sharedComponents/form-related';
-import { LabelIcon } from '@sharedComponents/icon-styles';
 import { LoadingModal } from '@sharedComponents/modals';
+import { LabelIcon } from '@sharedComponents/icon-styles';
 import { FlexContainer } from './AddNewUser.styles';
 // component utilities.
 import { iconLibrary } from '@config';
-import { roleOptions } from './AddNewUser.utilities';
 // component types.
-import { AddNewUserParameterType } from '@custom-types/pg/api/user/User.types';
+import { AddNewUserParameterT } from '@custom-types/pg/api/user/User.types';
 
 // ** AddNewUser | component ** //
-//
+// the component contains a form that serves the '/api/v1/pg/user/addNew' endpoint.
+// submitting the form creates a new user with the specified data in the PSQL database.
 const AddNewUser = () => {
   // * react-hook-form setup * //
-  const { formState: { isSubmitting, errors }, handleSubmit, register, setError } = useForm<AddNewUserParameterType>({ mode: 'onSubmit' });
+  const { formState: { isSubmitting, errors }, handleSubmit, register, setError } = useForm<AddNewUserParameterT>({ mode: 'onSubmit' });
 
   // * custom hooks setup * //
   const { onSubmit } = useSubmitForm(setError);
-
-  // * component setup * //
-  const rolesOptions = roleOptions.map((option) => {
-    return (
-      <option key={option.label} value={option.value}>{option.label}</option>
-    );
-  });
+  const { rolesOptions } = useGenerateOptions();
 
   return (
     <Form id={'addNewUser'} method={'POST'} action={'/api/v1/pg/user/addNew'} onSubmit={handleSubmit(onSubmit)}>
@@ -64,7 +61,7 @@ const AddNewUser = () => {
           <FlexContainer $direction={'column'}>
             <FlexContainer $direction={'row'}>
               <LabelIcon icon={iconLibrary.faUser}></LabelIcon>
-              <Label htmlFor={'firstName'} labelText={'First name'} />
+              <Label htmlFor={'firstName'} labelText={'First name(s)'} />
             </FlexContainer>
             <TextInput
               id={'firstName'}
@@ -87,7 +84,7 @@ const AddNewUser = () => {
           <FlexContainer $direction={'column'}>
             <FlexContainer $direction={'row'}>
               <LabelIcon icon={iconLibrary.faUsers}></LabelIcon>
-              <Label htmlFor={'lastname'} labelText={'Last name'} />
+              <Label htmlFor={'lastname'} labelText={'Last name(s)'} />
             </FlexContainer>
             <TextInput
               id={'lastName'}
@@ -129,7 +126,7 @@ const AddNewUser = () => {
           {(errors.userRole?.message) && (<ErrorMessage errorMessage={errors.userRole.message} />)}
         </FlexContainer>
       </InputContainer>
-      {(isSubmitting) ? (<LoadingModal loadingMessage={'Wait.'} />) : (<GenericTypeSubmitInput type={'submit'} value={'submit query'} />)}
+      {(isSubmitting) ? (<LoadingModal loadingMessage={'Your request is being processed.'} />) : (<SubmitInput type={'submit'} value={'submit query'} disabled={isSubmitting} />)}
     </Form>
   );
 };

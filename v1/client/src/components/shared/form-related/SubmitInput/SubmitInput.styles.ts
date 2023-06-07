@@ -1,7 +1,7 @@
 // external packages.
 import styled from 'styled-components';
 
-const GenericTypeSubmitInput = styled.input`
+const SubmitInput = styled.input`
   align-self: center;
   width: auto;
   height: 6rem;
@@ -28,4 +28,4 @@ const GenericTypeSubmitInput = styled.input`
   }
 `;
 
-export default GenericTypeSubmitInput;
+export default SubmitInput;

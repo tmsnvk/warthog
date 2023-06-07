@@ -1,5 +1,7 @@
+// external packages.
 import styled from 'styled-components';
-import { FlexContainerTypes } from './AddNewUser.types';
+// component types.
+import { FlexContainerT } from './AddNewUser.types';
 
 const setDirection = ($direction: string) => {
   switch ($direction) {
@@ -21,7 +23,7 @@ const setAlignItems = ($direction: string) => {
   }
 };
 
-const FlexContainer = styled.div<FlexContainerTypes>`
+const FlexContainer = styled.div<FlexContainerT>`
   display: flex;
   flex-direction: ${({ $direction }) => setDirection($direction)};
   align-items: ${({ $direction }) => setAlignItems($direction)};

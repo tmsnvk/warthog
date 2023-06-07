@@ -1,5 +1,7 @@
+// external pacakges.
 import styled from 'styled-components';
-import { SelectInputType } from './SelectInput.types';
+// component types.
+import { SelectInputT } from './SelectInput.types';
 
 const setSize = ($size: string) => {
   switch ($size) {
@@ -11,7 +13,7 @@ const setSize = ($size: string) => {
   }
 };
 
-const SelectInput = styled.select<SelectInputType>`
+const SelectInput = styled.select<SelectInputT>`
   width: ${({ $size }) => setSize($size)};
   height: 6rem;
   padding: 0 0 0 2.5rem;

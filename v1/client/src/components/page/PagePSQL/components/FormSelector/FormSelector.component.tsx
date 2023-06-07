@@ -1,6 +1,6 @@
 // react and eco.
 import { useFindActiveOptionIndex } from '@pageComponents/PagePSQL/hooks';
-import { useGenerateFormBtns } from './FormSelector.hooks';
+import { useGenerateFormButtons } from './FormSelector.hooks';
 // component elements.
 import {
   ButtonContainer,
@@ -14,8 +14,8 @@ import { FormSelectorT } from './FormSelector.types';
 // ** FormSelector | component ** //
 //
 const FormSelector = ({ options, handleClick }: FormSelectorT) => {
-  const optionItems = useGenerateFormBtns({ options, handleClick });
-  const activeOptionIndex = useFindActiveOptionIndex(options);
+  const { optionItems } = useGenerateFormButtons({ options, handleClick });
+  const { activeOptionIndex } = useFindActiveOptionIndex(options);
 
   return (
     <SectionContainer>

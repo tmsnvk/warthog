@@ -12,7 +12,7 @@ import { ButtonDescriptionT } from './ButtonDescription.types';
 // ** ButtonDescription | component ** //
 //
 const ButtonDescription = ({ instructions }: ButtonDescriptionT) => {
-  const listElements = useGenerateDescList(instructions.body);
+  const { listElements } = useGenerateDescList(instructions.body);
 
   return (
     <ArticleContainer>

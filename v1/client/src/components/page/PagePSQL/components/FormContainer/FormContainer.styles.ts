@@ -1,3 +1,4 @@
+// external packages.
 import styled from 'styled-components';
 
 const FormContainer = styled.section`
@@ -5,9 +6,6 @@ const FormContainer = styled.section`
   grid-row: 2;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: auto;
-  border-radius: 1rem;
 `;
 
 export default FormContainer;

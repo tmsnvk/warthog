@@ -1,3 +1,3 @@
-import AddNewUserF from './AddNewUser.component';
+import AddNewUser from './AddNewUser.component';
 
-export default AddNewUserF;
+export default AddNewUser;

@@ -20,7 +20,7 @@ type IconLibraryConfigType = {
   // // passwordHidden: IconLookup;
   // // passwordVisible: IconLookup;
   // signOut: IconLookup;
-  // spinner: IconLookup;
+  faSpinner: IconLookup;
   // toriiGate: IconLookup;
   // userTie: IconLookup;
   // wrench: IconLookup;
@@ -48,7 +48,7 @@ const iconLibrary: IconLibraryConfigType = {
   // // sign: ["fas", "sign"],
   // signOut: { prefix: "fas", iconName: "right-from-bracket"},
   // // skull: ["fas", "skull"],
-  // spinner: { prefix: "fas", iconName: "spinner"},
+  faSpinner: { prefix: 'fas', iconName: 'gear' },
   // // star: ["fas", "star"],
   // toriiGate: { prefix: "fas", iconName: "torii-gate"},
   // // trophy: ["fas", "trophy"],

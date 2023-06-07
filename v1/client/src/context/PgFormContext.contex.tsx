@@ -6,15 +6,15 @@ import {
   useState,
 } from 'react';
 
-type GeneralQueryDataType = {
+type GeneralQueryDataT = {
   pgCommandOpen: string;
   dataFields: string[];
-  pgCommandClose: string | undefined;
+  pgCommandClose: string;
 }
 
 type PgFormContext = {
-  addNewUserQueryData: GeneralQueryDataType[];
-  setAddNewUserQueryData: (value: [{ pgCommandOpen: string, dataFields: [], pgCommandClose: string | undefined }]) => void;
+  addNewUserQueryData: GeneralQueryDataT[];
+  setAddNewUserQueryData: (value: { pgCommandOpen: string, dataFields: string[], pgCommandClose: string }[]) => void;
 }
 
 type PgFormContextProvider = {
@@ -24,7 +24,7 @@ type PgFormContextProvider = {
 export const PgFormContext = createContext<PgFormContext>({} as PgFormContext);
 
 export const PgFormContextProvider = ({ children }: PgFormContextProvider) => {
-  const [addNewUserQueryData, setAddNewUserQueryData] = useState<GeneralQueryDataType[]>([{ pgCommandOpen: '', dataFields: ['', '', ''], pgCommandClose: '' }]);
+  const [addNewUserQueryData, setAddNewUserQueryData] = useState<GeneralQueryDataT[]>([{ pgCommandOpen: '', dataFields: [], pgCommandClose: '' }]);
 
   return (
     <PgFormContext.Provider value={{ addNewUserQueryData, setAddNewUserQueryData }}>

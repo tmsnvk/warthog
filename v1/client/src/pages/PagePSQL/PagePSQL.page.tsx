@@ -16,13 +16,13 @@ import {
 //
 const PagePSQL = () => {
   const { options, handleClick } = useHandleFormDisplay();
-  const activeFormIndex = useFindActiveOptionIndex(options);
+  const { activeOptionIndex } = useFindActiveOptionIndex(options);
 
   return (
     <PageContainer>
       <FormSelector handleClick={handleClick} options={options} />
       <FormContainer>
-        {options[activeFormIndex].formComponent}
+        {options[activeOptionIndex].formComponent}
       </FormContainer>
       <VisualiseDataContainer as={'section'}>
         <AddNewUserData />

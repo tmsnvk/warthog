@@ -3,12 +3,14 @@ import { FormOptionsT } from '../types/PagePSQL.types';
 
 // ** useFindActiveOptionIndex | custom hook ** //
 //
-const useFindActiveOptionIndex = (options: FormOptionsT): number => {
+const useFindActiveOptionIndex = (options: FormOptionsT): { activeOptionIndex: number } => {
   const activeOptionIndex = options.findIndex((option) => {
     return option.isActive;
   });
 
-  return activeOptionIndex;
+  return {
+    activeOptionIndex,
+  };
 };
 
 export default useFindActiveOptionIndex;

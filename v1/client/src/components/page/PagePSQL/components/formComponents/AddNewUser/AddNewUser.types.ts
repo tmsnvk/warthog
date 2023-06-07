@@ -1,3 +1,3 @@
-export type FlexContainerTypes = {
+export type FlexContainerT = {
   $direction: string;
 }

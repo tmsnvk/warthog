@@ -20,8 +20,8 @@ import {
 } from '@pages';
 // external packages.
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faAddressCard, faEnvelope, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
-library.add(faAddressCard, faEnvelope, faUser, faUsers);
+import { faAddressCard, faEnvelope, faGear, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
+library.add(faAddressCard, faEnvelope, faGear, faUser, faUsers);
 
 // initiates react-query with defaultOptions.
 const queryClient = new QueryClient({
