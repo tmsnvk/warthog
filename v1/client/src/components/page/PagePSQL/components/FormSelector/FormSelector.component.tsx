@@ -4,7 +4,6 @@ import { useGenerateFormButtons } from './FormSelector.hooks';
 // component elements.
 import {
   ButtonCategoryContainer,
-  ButtonContainer,
   ButtonDescription,
   DescriptionContainer,
   SectionContainer,
@@ -20,17 +19,15 @@ const FormSelector = ({ options, handleClick }: FormSelectorT) => {
 
   return (
     <SectionContainer>
-      <ButtonContainer>
-        <ButtonCategoryContainer>
-          {generalOptions}
-        </ButtonCategoryContainer>
-        <ButtonCategoryContainer>
-          {studentOptions}
-        </ButtonCategoryContainer>
-        <ButtonCategoryContainer>
-          {mentorOptions}
-        </ButtonCategoryContainer>
-      </ButtonContainer>
+      <ButtonCategoryContainer>
+        {generalOptions}
+      </ButtonCategoryContainer>
+      <ButtonCategoryContainer>
+        {studentOptions}
+      </ButtonCategoryContainer>
+      <ButtonCategoryContainer>
+        {mentorOptions}
+      </ButtonCategoryContainer>
       <DescriptionContainer>
         <ButtonDescription $isActive={options[activeOptionIndex].isActive}>{options[activeOptionIndex].btnDesc}</ButtonDescription>
       </DescriptionContainer>
