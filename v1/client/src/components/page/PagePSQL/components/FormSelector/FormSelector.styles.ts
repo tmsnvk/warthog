@@ -15,7 +15,8 @@ const SectionContainer = styled.section`
 
 const ButtonContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex-wrap: wrap;
   margin: 5rem 0 5rem 0;
 `;
 
@@ -32,7 +33,7 @@ const OptionButton = styled.button<ButtonDescriptionT>`
   width: auto;
   height: 6rem;
   padding: 0 1rem 0 1rem;
-  margin: 0 1.5rem 0 1.5rem;
+  margin: 1.5rem 1.5rem 1.5rem 1.5rem;
   background-color: ${({ theme, $isActive }) => $isActive ? theme.colorBackground.secondary : theme.colorBackground.tertiary};
   color: ${({ theme, $isActive }) => $isActive ? theme.color.secondary : theme.color.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.medium};

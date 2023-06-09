@@ -14,13 +14,21 @@ import { FormSelectorT } from './FormSelector.types';
 // ** FormSelector | component ** //
 //
 const FormSelector = ({ options, handleClick }: FormSelectorT) => {
-  const { optionItems } = useGenerateFormButtons({ options, handleClick });
+  const { generalOptions, studentOptions, mentorOptions } = useGenerateFormButtons({ options, handleClick });
   const { activeOptionIndex } = useFindActiveOptionIndex(options);
 
   return (
     <SectionContainer>
       <ButtonContainer>
-        {optionItems}
+        <div>
+          {generalOptions}
+        </div>
+        <div>
+          {studentOptions}
+        </div>
+        <div>
+          {mentorOptions}
+        </div>
       </ButtonContainer>
       <DescriptionContainer>
         <ButtonDescription $isActive={options[activeOptionIndex].isActive}>{options[activeOptionIndex].btnDesc}</ButtonDescription>
