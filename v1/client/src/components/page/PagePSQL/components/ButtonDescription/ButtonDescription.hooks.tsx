@@ -5,7 +5,7 @@ import { ButtonDescriptionHookT } from './ButtonDescription.types';
 
 // ** useGenerateDescList | custom hook ** //
 //
-const useGenerateDescList = (instructionsBody: ButtonDescriptionHookT): { listElements: JSX.Element[] } => {
+const useGenerateDescList = (instructionsBody: ButtonDescriptionHookT) => {
   const listElements = instructionsBody.map((text) => {
     return (
       <ListElement key={text}>{text}</ListElement>

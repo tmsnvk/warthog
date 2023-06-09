@@ -1,41 +1,22 @@
 // react and eco.
 import { useContext } from 'react';
-import { PgFormContext } from '@context';
-// component elements.
-import {
-  Command,
-  DataField,
-  ElementContainer,
-} from './AddNewUserData.styles';
+import { PgFormContext } from '@context/PgFormContext.context';
+import { useGenerateQueryString } from './AddNewUserData.hooks';
+import { GenericParagraph } from '@sharedComponents/text-related';
 
 // ** AddNewUserData | component ** //
 //
 const AddNewUserData = () => {
+  // * custom context setup * //
   const { addNewUserQueryData } = useContext(PgFormContext);
 
-  const visualisedData = addNewUserQueryData.map(({ pgCommandOpen, dataFields, pgCommandClose }, index) => {
-    const visualiseDataFields = dataFields.map((field) => {
-      return (
-        <DataField key={field}>{field}</DataField>
-      );
-    });
-
-    return (
-      <ElementContainer key={index}>
-        <Command>
-          {pgCommandOpen}
-        </Command>
-        {visualiseDataFields}
-        <Command>
-          {pgCommandClose}
-        </Command>
-      </ElementContainer>
-    );
-  });
+  // * custom hooks setup * //
+  const { generateQueryComponents } = useGenerateQueryString(addNewUserQueryData);
 
   return (
     <>
-      {visualisedData}
+      {generateQueryComponents.length > 1 && <GenericParagraph render={'The last successfully submitted query:'} />}
+      {generateQueryComponents}
     </>
   );
 };

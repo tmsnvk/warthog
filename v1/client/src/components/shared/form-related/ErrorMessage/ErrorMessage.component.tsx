@@ -4,7 +4,7 @@ import { ErrorMessageContainer } from './ErrorMessage.styles';
 import { ParagraphComponentT } from './ErrorMessage.types';
 
 // ** ErrorMessage | component ** //
-// the component renders various error messages.
+// the component renders various error messages across the application.
 const ErrorMessage = ({ errorMessage }: ParagraphComponentT) => {
   return (
     <ErrorMessageContainer>

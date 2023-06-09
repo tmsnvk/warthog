@@ -1,7 +1,8 @@
 // express and eco.
 import express, {
   Application,
-  Request, Response,
+  Request,
+  Response,
 } from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
@@ -13,6 +14,7 @@ import {
 } from '@config/express.config';
 // router imports.
 import studentRouter from '@routes/v1/pg/students/students.route';
+import { ErrorHandler } from '@middlewars';
 
 // import { connectToDatabase } from '@database/connection';
 
@@ -42,5 +44,6 @@ app.use(express.json());
 
 // pg routers.
 app.use('/api/v1/pg/user', studentRouter);
+app.use(ErrorHandler);
 
 app.listen(port, () => console.log(`server @ port ${port}! <===`));

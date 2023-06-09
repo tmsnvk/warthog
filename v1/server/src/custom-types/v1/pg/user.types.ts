@@ -1,5 +1,4 @@
-// export type GetAllRequestType = {}
-
+// ** addNewUser ** //
 export type AddNewUserQueryType = {
   rows: {
     email: string;
@@ -15,4 +14,6 @@ export type AddNewUserReturnType = {
   pgCommandOpen: string;
   dataFields: (string | number)[];
   pgCommandClose: string | undefined;
-}[]
+}[] | undefined;
+
+// **  ** //

@@ -3,7 +3,7 @@
     "baseUrl": "./src",
     "paths": {
       "@config": [ "config/index.ts" ],
-      "@context": [ "context/index.ts" ],
+      "@context/*": [ "context/*" ],
       "@constants/*": [ "constants/*" ],
       "@custom-types/*": [ "custom-types/*" ],
       "@hooks": [ "hooks/index.ts" ],

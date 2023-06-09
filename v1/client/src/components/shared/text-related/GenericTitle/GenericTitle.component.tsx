@@ -1,7 +1,7 @@
 // component elements.
 import { Paragraph } from './GenericTitle.styles';
-// component models.
-import { GenericTitleComponentType } from './GenericTitle.models';
+// component types.
+import { GenericTitleComponentType } from './GenericTitle.types';
 
 // ** GenericTextParagraph | component ** //
 //

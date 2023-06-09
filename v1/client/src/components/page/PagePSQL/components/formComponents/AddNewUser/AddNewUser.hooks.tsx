@@ -5,7 +5,7 @@ import {
   SubmitHandler,
   UseFormSetError,
 } from 'react-hook-form';
-import { PgFormContext } from '@context';
+import { PgFormContext } from '@context/PgFormContext.context';
 // component utilities.
 import { roleOptions } from './AddNewUser.utilities';
 // component services.
@@ -19,7 +19,7 @@ import {
 
 // ** useSubmitForm | custom hook ** //
 // a custom hook to handle the 'AddNewUser' form submissions.
-const useSubmitForm = (setError: UseFormSetError<AddNewUserParameterT>): { onSubmit: SubmitHandler<AddNewUserParameterT> } => {
+const useSubmitForm = (setError: UseFormSetError<AddNewUserParameterT>) => {
   // * custom context setup * //
   const { setAddNewUserQueryData } = useContext(PgFormContext);
 
@@ -36,7 +36,7 @@ const useSubmitForm = (setError: UseFormSetError<AddNewUserParameterT>): { onSub
       reset();
     },
     onError: (error: AddNewUserErrorT): void => {
-      setError('userEmail', { type: 'server', message: error.response.data });
+      setError('root.serverError', { type: error.response.status, message: error.response.data.message });
     },
   });
 

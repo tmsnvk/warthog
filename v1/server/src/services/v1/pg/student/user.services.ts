@@ -4,12 +4,12 @@ import pool from '@config/pgConfig.config';
 import {
   AddNewUserQueryType,
   AddNewUserReturnType,
-} from '@custom-types/pg/users.types';
+} from '@custom-types/pg/user.types';
 
 // ** userService | service object ** //
 //
 const userService = {
-  async addNew(email: string, firstName: string, lastName: string, userRole: string, userId: string): Promise<AddNewUserReturnType | undefined> {
+  async addNew(email: string, firstName: string, lastName: string, userRole: string, userId: string): Promise<AddNewUserReturnType> {
     try {
       const { rows }: AddNewUserQueryType = await pool.query(`
         INSERT INTO student_personal_data (

@@ -16,6 +16,9 @@ export type AddNewUserReturnT = {
 
 export type AddNewUserErrorT = {
   response: {
-    data: string;
+    status: string;
+    data: {
+      message: string;
+    }
   }
 }

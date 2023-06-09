@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 const SubmitInput = styled.input`
   align-self: center;
-  width: auto;
+  width: fit-content;
   height: 6rem;
+  margin: 1rem 0 1rem 0;
   padding: 0 1rem 0 1rem;
   background-color: ${({ theme }) => theme.colorBackground.tertiary};
   color: ${({ theme }) => theme.color.primaryLight};
@@ -17,10 +18,14 @@ const SubmitInput = styled.input`
   border-radius: 1rem;
   cursor: pointer;
 
-  &:hover {
+  &:hover:not([disabled]) {
     background-color: ${({ theme }) => theme.colorBackground.secondary};
     color: ${({ theme }) => theme.color.secondary};
     box-shadow: 0 0 0.5rem ${({ theme }) => theme.colorBackground.tertiary};
+  }
+
+  &:disabled {
+    cursor: not-allowed;
   }
 
   &:focus {

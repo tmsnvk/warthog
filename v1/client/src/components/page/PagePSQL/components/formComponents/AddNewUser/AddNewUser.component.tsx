@@ -11,6 +11,7 @@ import {
   InputContainer,
   Label,
   SelectInput,
+  SubmitContainer,
   SubmitInput,
   TextInput,
 } from '@sharedComponents/form-related';
@@ -27,7 +28,7 @@ import { AddNewUserParameterT } from '@custom-types/pg/api/user/User.types';
 // submitting the form creates a new user with the specified data in the PSQL database.
 const AddNewUser = () => {
   // * react-hook-form setup * //
-  const { formState: { isSubmitting, errors }, handleSubmit, register, setError } = useForm<AddNewUserParameterT>({ mode: 'onSubmit' });
+  const { formState: { isLoading, isSubmitting, errors }, handleSubmit, register, setError } = useForm<AddNewUserParameterT>({ mode: 'onSubmit' });
 
   // * custom hooks setup * //
   const { onSubmit } = useSubmitForm(setError);
@@ -44,7 +45,7 @@ const AddNewUser = () => {
           id={'userEmail'}
           {...register('userEmail', {
             required: { value: true, message: 'Providing an email address is required.' },
-            pattern: { value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/, message: 'Enter a valid email.' },
+            pattern: { value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, message: 'Enter a valid email.' },
           })}
           type={'text'}
           name={'userEmail'}
@@ -97,7 +98,7 @@ const AddNewUser = () => {
               autoComplete={'off'}
               placeholder={'enter user last name'}
               $size={'short'}
-              $isError={errors.firstName?.message !== undefined}
+              $isError={errors.lastName?.message !== undefined}
               disabled={isSubmitting}
             />
             {(errors.lastName?.message) && (<ErrorMessage errorMessage={errors.lastName.message} />)}
@@ -126,7 +127,10 @@ const AddNewUser = () => {
           {(errors.userRole?.message) && (<ErrorMessage errorMessage={errors.userRole.message} />)}
         </FlexContainer>
       </InputContainer>
-      {(isSubmitting) ? (<LoadingModal loadingMessage={'Your request is being processed.'} />) : (<SubmitInput type={'submit'} value={'submit query'} disabled={isSubmitting} />)}
+      <SubmitContainer>
+        {(isSubmitting) ? (<LoadingModal loadingMessage={'Your request is being processed.'} />) : (<SubmitInput type={'submit'} value={'submit query'} disabled={isSubmitting || isLoading} />)}
+        {(errors.root?.serverError) && (<ErrorMessage errorMessage={errors.root.serverError.message as string} />)}
+      </SubmitContainer>
     </Form>
   );
 };

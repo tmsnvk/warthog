@@ -5,8 +5,9 @@
       "@config/*": [ "config/*" ],
       "@constants/*": [ "constants/*" ],
       "@controllers/*": [ "controllers/*" ],
-      "@database/*": [ "database/*" ],
       "@custom-types/pg/*": [ "custom-types/v1/pg/*" ],
+      "@database/*": [ "database/*" ],
+      "@middlewars": [ "middlewares/index.ts" ],
       "@routes/*": [ "routes/*" ],
       "@services/*": [ "services/*" ]
     },
