@@ -5,14 +5,16 @@ import {
 } from '@pageComponents/PagePSQL/components';
 // component utilities.
 import {
-  addNewUser,
+  generalOptionDescriptions,
+  mentorOptionDescriptions,
+  studentOptionDescriptions,
 } from '@pageComponents/PagePSQL/components/ButtonDescription/ButtonDescription.utilities';
 
 const formOptions = [
   {
     btnName: 'Add new user',
     btnCategory: 'general',
-    btnDesc: <ButtonDescription instructions={addNewUser} />,
+    btnDesc: <ButtonDescription instructions={generalOptionDescriptions.addNewUser} />,
     isActive: true,
     formComponent: <AddNewUser />,
   },

@@ -3,6 +3,7 @@ import { useGenerateDescList } from './ButtonDescription.hooks';
 // component elements.
 import {
   ArticleContainer,
+  Description,
   Instructions,
   Title,
 } from './ButtonDescription.styles';
@@ -19,6 +20,9 @@ const ButtonDescription = ({ instructions }: ButtonDescriptionT) => {
       <Title>
         {instructions.title}
       </Title>
+      <Description>
+        {instructions.description}
+      </Description>
       <Instructions>
         {listElements}
       </Instructions>

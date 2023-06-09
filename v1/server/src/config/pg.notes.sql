@@ -1,4 +1,4 @@
-CREATE TABLE student_personal_data (
+CREATE TABLE people_records (
   email VARCHAR(255) PRIMARY KEY UNIQUE,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
