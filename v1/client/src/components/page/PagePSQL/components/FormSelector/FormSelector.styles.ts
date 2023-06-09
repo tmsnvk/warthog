@@ -20,6 +20,10 @@ const ButtonContainer = styled.div`
   margin: 5rem 0 5rem 0;
 `;
 
+const ButtonCategoryContainer = styled.article`
+  margin: 1.5rem 0 1.5rem 0;
+`;
+
 const DescriptionContainer = styled(GenericComponentContainer)`
   display: flex;
   flex-direction: row;
@@ -33,7 +37,7 @@ const OptionButton = styled.button<ButtonDescriptionT>`
   width: auto;
   height: 6rem;
   padding: 0 1rem 0 1rem;
-  margin: 1.5rem 1.5rem 1.5rem 1.5rem;
+  margin: 0 1.5rem 0 1.5rem;
   background-color: ${({ theme, $isActive }) => $isActive ? theme.colorBackground.secondary : theme.colorBackground.tertiary};
   color: ${({ theme, $isActive }) => $isActive ? theme.color.secondary : theme.color.primaryLight};
   font-size: ${({ theme }) => theme.fontSize.medium};
@@ -45,6 +49,18 @@ const OptionButton = styled.button<ButtonDescriptionT>`
   border-radius: 1rem;
   box-shadow: ${({ theme, $isActive }) => $isActive ? `0 0 0.5rem ${theme.colorBackground.tertiary}` : ''};
   cursor: pointer;
+
+  &:first-of-type {
+    margin: 0 1.5rem 0 0;
+  }
+
+  &:last-of-type {
+    margin: 0 0 0 1.5rem;
+  }
+
+  &:only-of-type {
+    margin: 0 1.5rem 0 0;
+  }
 
   &:hover {
   background-color: ${({ theme }) => theme.colorBackground.secondary};
@@ -66,6 +82,7 @@ const ButtonDescription = styled.p<ButtonDescriptionT>`
 export {
   SectionContainer,
   ButtonContainer,
+  ButtonCategoryContainer,
   DescriptionContainer,
   OptionButton,
   ButtonDescription,

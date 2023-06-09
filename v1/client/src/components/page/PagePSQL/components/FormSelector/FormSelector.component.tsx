@@ -3,6 +3,7 @@ import { useFindActiveOptionIndex } from '@pageComponents/PagePSQL/hooks';
 import { useGenerateFormButtons } from './FormSelector.hooks';
 // component elements.
 import {
+  ButtonCategoryContainer,
   ButtonContainer,
   ButtonDescription,
   DescriptionContainer,
@@ -20,15 +21,15 @@ const FormSelector = ({ options, handleClick }: FormSelectorT) => {
   return (
     <SectionContainer>
       <ButtonContainer>
-        <div>
+        <ButtonCategoryContainer>
           {generalOptions}
-        </div>
-        <div>
+        </ButtonCategoryContainer>
+        <ButtonCategoryContainer>
           {studentOptions}
-        </div>
-        <div>
+        </ButtonCategoryContainer>
+        <ButtonCategoryContainer>
           {mentorOptions}
-        </div>
+        </ButtonCategoryContainer>
       </ButtonContainer>
       <DescriptionContainer>
         <ButtonDescription $isActive={options[activeOptionIndex].isActive}>{options[activeOptionIndex].btnDesc}</ButtonDescription>
