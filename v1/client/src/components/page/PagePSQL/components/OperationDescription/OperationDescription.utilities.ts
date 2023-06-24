@@ -1,7 +1,7 @@
-const generalOptionDescriptions = {
-  addNewUser: {
-    title: 'Add a new person to the database.',
-    description: 'Submitting the form adds a single Person record to the database\'s people_records table.',
+const basicOperationDescriptions = {
+  createRecord: {
+    title: 'Create a new person record in the database',
+    description: 'Submitting the form creates a single Person record in the database\'s people_records table.',
     body: [
       'Make sure to fill in each input field with the proper information and select an option from the select field. Error messages will be shown if annything is missing.',
       'Once all fields are filled in, click on the \'Submit Query\' button to forward your query request to the server. The server then runs the appropriate database operations.',
@@ -9,7 +9,7 @@ const generalOptionDescriptions = {
       'An explanation will be shown if the operation failed.',
     ],
   },
-  updateUser: {
+  updateRecord: {
     title: '',
     description: '',
     body: [
@@ -18,7 +18,7 @@ const generalOptionDescriptions = {
       '',
     ],
   },
-  deleteUser: {
+  deleteRecord: {
     title: '',
     description: '',
     body: [
@@ -29,7 +29,7 @@ const generalOptionDescriptions = {
   },
 };
 
-const studentOptionDescriptions = {
+const studentOperationDescriptions = {
   addCourse: {
     title: '',
     description: '',
@@ -41,7 +41,7 @@ const studentOptionDescriptions = {
   },
 };
 
-const mentorOptionDescriptions = {
+const mentorOperationDescriptions = {
   addStudent: {
     title: '',
     description: '',
@@ -54,7 +54,7 @@ const mentorOptionDescriptions = {
 };
 
 export {
-  generalOptionDescriptions,
-  studentOptionDescriptions,
-  mentorOptionDescriptions,
+  basicOperationDescriptions,
+  studentOperationDescriptions,
+  mentorOperationDescriptions,
 };

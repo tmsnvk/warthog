@@ -5,14 +5,14 @@ import {
 } from '@pageComponents/PagePSQL/hooks';
 // component elements.
 import {
-  AddNewUserData,
   FormContainer,
   FormSelector,
   PageContainer,
+  QueryReturnData,
   VisualiseDataContainer,
 } from '@pageComponents/PagePSQL/components';
 
-// ** PostgreSQL | page ** //
+// ** PagePSQL | page ** //
 //
 const PagePSQL = () => {
   const { options, handleClick } = useHandleFormDisplay();
@@ -25,7 +25,7 @@ const PagePSQL = () => {
         {options[activeOptionIndex].formComponent}
       </FormContainer>
       <VisualiseDataContainer as={'section'}>
-        <AddNewUserData />
+        <QueryReturnData />
       </VisualiseDataContainer>
     </PageContainer>
   );

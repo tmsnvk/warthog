@@ -3,14 +3,14 @@ import {
   Command,
   DataField,
   ElementContainer,
-} from './AddNewUserData.styles';
+} from './QueryReturnData.styles';
 // component types.
 import { GeneralQueryDataT } from '@context/PgFormContext.context';
 
 // ** useGenerateQueryString | custom hook ** //
 //
-const useGenerateQueryString = (addNewUserQueryData: GeneralQueryDataT[]) => {
-  const generateQueryComponents = addNewUserQueryData.map(({ pgCommandOpen, dataFields, pgCommandClose }, index) => {
+const useGenerateQueryString = (createRecordQueryData: GeneralQueryDataT[]) => {
+  const generateQueryComponents = createRecordQueryData.map(({ pgCommandOpen, dataFields, pgCommandClose }, index) => {
     const visualiseDataFields = dataFields.map((field) => {
       return (
         <DataField key={field}>{field}</DataField>

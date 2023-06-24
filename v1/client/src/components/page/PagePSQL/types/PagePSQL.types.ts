@@ -1,7 +1,7 @@
 export type FormOptionsT = {
-  btnName: string;
-  btnCategory: string;
-  btnDesc: JSX.Element;
+  buttonName: string;
+  buttonCategory: string;
+  buttonDescription: JSX.Element;
   isActive: boolean;
   formComponent: JSX.Element;
 }[]

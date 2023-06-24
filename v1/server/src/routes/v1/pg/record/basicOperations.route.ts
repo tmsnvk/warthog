@@ -2,11 +2,11 @@
 import { Router } from 'express';
 // controller modules.
 import {
-  addNewUserController,
-} from '@controllers/v1/pg/user';
+  createRecordController,
+} from '@controllers/v1/pg/record';
 
 const router: Router = Router();
 
-router.post('/addNew', addNewUserController);
+router.post('/createRecord', createRecordController);
 
 export default router;

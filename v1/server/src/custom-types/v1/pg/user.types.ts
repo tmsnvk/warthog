@@ -1,5 +1,13 @@
-// ** addNewUser ** //
-export type AddNewUserQueryType = {
+// ** createNewUser ** //
+export type CreateRecordParameterT = {
+  email: string;
+  firstName: string;
+  lastName: string;
+  role: string;
+  id: string;
+}
+
+export type CreateRecordQueryT = {
   rows: {
     email: string;
     first_name: string;
@@ -10,7 +18,7 @@ export type AddNewUserQueryType = {
   }[]
 }
 
-export type AddNewUserReturnType = {
+export type CreateRecordReturnT = {
   pgCommandOpen: string;
   dataFields: (string | number)[];
   pgCommandClose: string | undefined;

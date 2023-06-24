@@ -1,7 +1,7 @@
 // external packages.
 import styled from 'styled-components';
 // component types.
-import { FlexContainerT } from './AddNewUser.types';
+import { FlexContainerT } from './CreateRecord.types';
 
 const setDirection = ($direction: string) => {
   switch ($direction) {

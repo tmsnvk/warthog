@@ -13,29 +13,27 @@ export type GeneralQueryDataT = {
 }
 
 type PgFormContext = {
-  addNewUserQueryData: GeneralQueryDataT[];
-  setAddNewUserQueryData: (value: { pgCommandOpen: string, dataFields: string[], pgCommandClose: string }[]) => void;
+  createRecordQueryData: GeneralQueryDataT[];
+  setCreateRecordQueryData: (value: { pgCommandOpen: string, dataFields: string[], pgCommandClose: string }[]) => void;
 }
 
 type PgFormContextProvider = {
   children: ReactNode;
 }
 
-const initialState: GeneralQueryDataT[] = [
-  {
-    pgCommandOpen: '',
-    dataFields: [],
-    pgCommandClose: '',
-  },
-];
+const initialState: GeneralQueryDataT[] = [{
+  pgCommandOpen: '',
+  dataFields: [],
+  pgCommandClose: '',
+}];
 
 export const PgFormContext = createContext<PgFormContext>({} as PgFormContext);
 
 export const PgFormContextProvider = ({ children }: PgFormContextProvider) => {
-  const [addNewUserQueryData, setAddNewUserQueryData] = useState<GeneralQueryDataT[]>(initialState);
+  const [createRecordQueryData, setCreateRecordQueryData] = useState<GeneralQueryDataT[]>(initialState);
 
   return (
-    <PgFormContext.Provider value={{ addNewUserQueryData, setAddNewUserQueryData }}>
+    <PgFormContext.Provider value={{ createRecordQueryData, setCreateRecordQueryData }}>
       {children}
     </PgFormContext.Provider>
   );

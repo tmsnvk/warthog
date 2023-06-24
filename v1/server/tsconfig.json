@@ -7,7 +7,7 @@
       "@controllers/*": [ "controllers/*" ],
       "@custom-types/pg/*": [ "custom-types/v1/pg/*" ],
       "@database/*": [ "database/*" ],
-      "@middlewars": [ "middlewares/index.ts" ],
+      "@middlewares": [ "middlewares/index.ts" ],
       "@routes/*": [ "routes/*" ],
       "@services/*": [ "services/*" ]
     },

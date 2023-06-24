@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import {
   useGenerateOptions,
   useSubmitForm,
-} from './AddNewUser.hooks';
+} from './CreateRecord.hooks';
 // component elements.
 import {
   ErrorMessage,
@@ -17,91 +17,91 @@ import {
 } from '@sharedComponents/form-related';
 import { LoadingModal } from '@sharedComponents/modals';
 import { LabelIcon } from '@sharedComponents/icon-styles';
-import { FlexContainer } from './AddNewUser.styles';
+import { FlexContainer } from './CreateRecord.styles';
 // component utilities.
 import { iconLibrary } from '@config';
 // component types.
-import { AddNewUserParameterT } from '@custom-types/pg/api/user/User.types';
+import { CreateRecordParameterT } from '@custom-types/pg/api/record/Record.types';
 
-// ** AddNewUser | component ** //
-// the component contains a form that serves the '/api/v1/pg/user/addNew' endpoint.
-// submitting the form creates a new user with the specified data in the PSQL database.
-const AddNewUser = () => {
+// ** CreateRecord | component ** //
+// the component contains a form that serves the '/api/v1/pg/record/createRecord' endpoint.
+// submitting the form creates a new record with the specified data in the application's psql database.
+const CreateRecord = () => {
   // * react-hook-form setup * //
-  const { formState: { isLoading, isSubmitting, errors }, handleSubmit, register, setError } = useForm<AddNewUserParameterT>({ mode: 'onSubmit' });
+  const { formState: { isLoading, isSubmitting, errors }, handleSubmit, register, setError } = useForm<CreateRecordParameterT>({ mode: 'onSubmit' });
 
   // * custom hooks setup * //
   const { onSubmit } = useSubmitForm(setError);
   const { rolesOptions } = useGenerateOptions();
 
   return (
-    <Form id={'addNewUser'} method={'POST'} action={'/api/v1/pg/user/addNew'} onSubmit={handleSubmit(onSubmit)}>
+    <Form id={'createRecord'} method={'POST'} action={'/api/v1/pg/record/createRecord'} onSubmit={handleSubmit(onSubmit)}>
       <InputContainer>
         <FlexContainer $direction={'row'}>
           <LabelIcon icon={iconLibrary.faEnvelope}></LabelIcon>
-          <Label htmlFor={'userEmail'} labelText={'Email'} />
+          <Label htmlFor={'recordEmail'} labelText={'Email'} />
         </FlexContainer>
         <TextInput
-          id={'userEmail'}
-          {...register('userEmail', {
+          id={'recordEmail'}
+          {...register('recordEmail', {
             required: { value: true, message: 'Providing an email address is required.' },
             pattern: { value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/, message: 'Enter a valid email.' },
           })}
           type={'text'}
-          name={'userEmail'}
+          name={'recordEmail'}
           autoComplete={'off'}
-          placeholder={'enter user email address'}
+          placeholder={'enter record email address'}
           $size={'normal'}
-          $isError={errors.userEmail?.message !== undefined}
+          $isError={errors.recordEmail?.message !== undefined}
           disabled={isSubmitting}
         />
-        {(errors.userEmail?.message) && (<ErrorMessage errorMessage={errors.userEmail.message} />)}
+        {(errors.recordEmail?.message) && (<ErrorMessage errorMessage={errors.recordEmail.message} />)}
       </InputContainer>
       <FlexContainer $direction={'row'}>
         <InputContainer>
           <FlexContainer $direction={'column'}>
             <FlexContainer $direction={'row'}>
               <LabelIcon icon={iconLibrary.faUser}></LabelIcon>
-              <Label htmlFor={'firstName'} labelText={'First name(s)'} />
+              <Label htmlFor={'recordFirstName'} labelText={'First name(s)'} />
             </FlexContainer>
             <TextInput
-              id={'firstName'}
-              {...register('firstName', {
+              id={'recordFirstName'}
+              {...register('recordFirstName', {
                 required: { value: true, message: 'Providing a first name is required.' },
                 pattern: { value: /^[A-Za-z0-9-\s]+$/i, message: 'Use only letters and numbers.' },
               })}
               type={'text'}
-              name={'firstName'}
+              name={'recordFirstName'}
               autoComplete={'off'}
-              placeholder={'enter user first name'}
+              placeholder={'enter record first name'}
               $size={'short'}
-              $isError={errors.firstName?.message !== undefined}
+              $isError={errors.recordFirstName?.message !== undefined}
               disabled={isSubmitting}
             />
-            {(errors.firstName?.message) && (<ErrorMessage errorMessage={errors.firstName.message} />)}
+            {(errors.recordFirstName?.message) && (<ErrorMessage errorMessage={errors.recordFirstName.message} />)}
           </FlexContainer>
         </InputContainer>
         <InputContainer>
           <FlexContainer $direction={'column'}>
             <FlexContainer $direction={'row'}>
               <LabelIcon icon={iconLibrary.faUsers}></LabelIcon>
-              <Label htmlFor={'lastname'} labelText={'Last name(s)'} />
+              <Label htmlFor={'recordLastName'} labelText={'Last name(s)'} />
             </FlexContainer>
             <TextInput
-              id={'lastName'}
-              {...register('lastName', {
+              id={'recordLastName'}
+              {...register('recordLastName', {
                 required: { value: true, message: 'Providing a first name is required.' },
                 pattern: { value: /^[A-Za-z0-9-\s]+$/i, message: 'Use only letters and numbers.' },
               })}
               type={'text'}
-              name={'lastName'}
+              name={'recordLastName'}
               autoComplete={'off'}
-              placeholder={'enter user last name'}
+              placeholder={'enter record last name'}
               $size={'short'}
-              $isError={errors.lastName?.message !== undefined}
+              $isError={errors.recordLastName?.message !== undefined}
               disabled={isSubmitting}
             />
-            {(errors.lastName?.message) && (<ErrorMessage errorMessage={errors.lastName.message} />)}
+            {(errors.recordLastName?.message) && (<ErrorMessage errorMessage={errors.recordLastName.message} />)}
           </FlexContainer>
         </InputContainer>
       </FlexContainer>
@@ -109,22 +109,22 @@ const AddNewUser = () => {
         <FlexContainer $direction={'column'}>
           <FlexContainer $direction={'row'}>
             <LabelIcon icon={iconLibrary.faAddressCard}></LabelIcon>
-            <Label htmlFor={'userRole'} labelText={'User role'} />
+            <Label htmlFor={'recordRole'} labelText={'record role'} />
           </FlexContainer>
           <SelectInput
-            id={'userRole'}
-            {...register('userRole', {
-              required: { value: true, message: 'Choosing a user category is required.' },
+            id={'recordRole'}
+            {...register('recordRole', {
+              required: { value: true, message: 'Choosing a record category is required.' },
             })}
-            name={'userRole'}
+            name={'recordRole'}
             autoComplete={'off'}
             $size={'short'}
-            $isError={errors.userRole?.message !== undefined}
+            $isError={errors.recordRole?.message !== undefined}
             disabled={isSubmitting}
           >
             {rolesOptions}
           </SelectInput>
-          {(errors.userRole?.message) && (<ErrorMessage errorMessage={errors.userRole.message} />)}
+          {(errors.recordRole?.message) && (<ErrorMessage errorMessage={errors.recordRole.message} />)}
         </FlexContainer>
       </InputContainer>
       <SubmitContainer>
@@ -135,4 +135,4 @@ const AddNewUser = () => {
   );
 };
 
-export default AddNewUser;
+export default CreateRecord;

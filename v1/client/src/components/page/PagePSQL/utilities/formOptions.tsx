@@ -1,48 +1,48 @@
 // component elements.
 import {
-  AddNewUser,
-  ButtonDescription,
+  CreateRecord,
+  OperationDescription,
 } from '@pageComponents/PagePSQL/components';
 // component utilities.
 import {
-  generalOptionDescriptions,
-  mentorOptionDescriptions,
-  studentOptionDescriptions,
-} from '@pageComponents/PagePSQL/components/ButtonDescription/ButtonDescription.utilities';
+  basicOperationDescriptions,
+  mentorOperationDescriptions,
+  studentOperationDescriptions,
+} from '@pageComponents/PagePSQL/components/OperationDescription/OperationDescription.utilities';
 
 const formOptions = [
   {
-    btnName: 'Add new user',
-    btnCategory: 'general',
-    btnDesc: <ButtonDescription instructions={generalOptionDescriptions.addNewUser} />,
+    buttonName: 'Create record',
+    buttonCategory: 'basic',
+    buttonDescription: <OperationDescription instructions={basicOperationDescriptions.createRecord} />,
     isActive: true,
-    formComponent: <AddNewUser />,
+    formComponent: <CreateRecord />,
   },
   {
-    btnName: 'Update user',
-    btnCategory: 'general',
-    btnDesc: <></>,
+    buttonName: 'Update record',
+    buttonCategory: 'basic',
+    buttonDescription: <></>,
     isActive: false,
     formComponent: <></>,
   },
   {
-    btnName: 'Delete user',
-    btnCategory: 'general',
-    btnDesc: <></>,
+    buttonName: 'Delete record',
+    buttonCategory: 'basic',
+    buttonDescription: <></>,
     isActive: false,
     formComponent: <></>,
   },
   {
-    btnName: 'Add course to student',
-    btnCategory: 'student',
-    btnDesc: <></>,
+    buttonName: 'Add course to student record',
+    buttonCategory: 'student',
+    buttonDescription: <></>,
     isActive: false,
     formComponent: <></>,
   },
   {
-    btnName: 'Add student to mentor',
-    btnCategory: 'mentor',
-    btnDesc: <></>,
+    buttonName: 'Add student to mentor record',
+    buttonCategory: 'mentor',
+    buttonDescription: <></>,
     isActive: false,
     formComponent: <></>,
   },

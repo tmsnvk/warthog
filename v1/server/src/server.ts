@@ -13,8 +13,8 @@ import {
   helmetConfig,
 } from '@config/express.config';
 // router imports.
-import studentRouter from '@routes/v1/pg/students/students.route';
-import { ErrorHandler } from '@middlewars';
+import basicOperations from '@routes/v1/pg/record/basicOperations.route';
+import { ErrorHandler } from '@middlewares';
 
 // import { connectToDatabase } from '@database/connection';
 
@@ -42,8 +42,8 @@ app.use(express.json());
 //   process.exit();
 // });
 
-// pg routers.
-app.use('/api/v1/pg/user', studentRouter);
+// ** pg routers ** //
+app.use('/api/v1/pg/record', basicOperations);
 app.use(ErrorHandler);
 
 app.listen(port, () => console.log(`server @ port ${port}! <===`));

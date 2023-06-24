@@ -1,19 +1,17 @@
 // react and eco.
 import { useState } from 'react';
 import { formOptions } from '../utilities';
-// component types.
-import { FormOptionsT } from '../types/PagePSQL.types';
 
 // ** useHandleFormDisplay | custom hook ** //
 //
-const useHandleFormDisplay = (): { options: FormOptionsT, handleClick(btnName: string): void } => {
+const useHandleFormDisplay = () => {
   const [options, setOptions] = useState(formOptions);
 
-  const handleClick = (btnName: string): void => {
+  const handleClick = (buttonName: string): void => {
     const updatedOptions = options.map((option) => {
       option.isActive = false;
 
-      if (option.btnName === btnName) {
+      if (option.buttonName === buttonName) {
         option.isActive = true;
       }
 

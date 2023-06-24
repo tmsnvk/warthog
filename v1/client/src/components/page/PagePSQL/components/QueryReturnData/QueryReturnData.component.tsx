@@ -1,17 +1,17 @@
 // react and eco.
 import { useContext } from 'react';
 import { PgFormContext } from '@context/PgFormContext.context';
-import { useGenerateQueryString } from './AddNewUserData.hooks';
+import { useGenerateQueryString } from './QueryReturnData.hooks';
 import { GenericParagraph } from '@sharedComponents/text-related';
 
-// ** AddNewUserData | component ** //
+// ** QueryReturnData | component ** //
 //
-const AddNewUserData = () => {
+const QueryReturnData = () => {
   // * custom context setup * //
-  const { addNewUserQueryData } = useContext(PgFormContext);
+  const { createRecordQueryData } = useContext(PgFormContext);
 
   // * custom hooks setup * //
-  const { generateQueryComponents } = useGenerateQueryString(addNewUserQueryData);
+  const { generateQueryComponents } = useGenerateQueryString(createRecordQueryData);
 
   return (
     <>
@@ -21,4 +21,4 @@ const AddNewUserData = () => {
   );
 };
 
-export default AddNewUserData;
+export default QueryReturnData;

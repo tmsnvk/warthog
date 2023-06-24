@@ -1,29 +1,38 @@
 // component elements.
-import { OptionButton } from './FormSelector.styles';
+import {
+  ButtonCategoryContainer,
+  OptionButton,
+} from './FormSelector.styles';
 // component types.
 import { FormSelectorT } from './FormSelector.types';
 
 // ** generateOptionButtons | helper function ** //
 //
 const generateOptionButtons = ({ options, handleClick }: FormSelectorT, category: string) => {
-  return options.filter((option) => option.btnCategory === category).map(({ btnName, isActive }) => {
+  return options.filter((option) => option.buttonCategory === category).map(({ buttonName, isActive }) => {
     return (
-      <OptionButton key={btnName} onClick={() => handleClick(btnName)} $isActive={isActive}>{btnName}</OptionButton>
+      <OptionButton key={buttonName} onClick={() => handleClick(buttonName)} $isActive={isActive}>{buttonName}</OptionButton>
     );
   });
 };
 
-// ** useGenerateFormBtns | custom hook ** //
+// ** useGenerateFormButtons | custom hook ** //
 // a custom hook to generate the button list that enables the choice of various queries.
 const useGenerateFormButtons = ({ options, handleClick }: FormSelectorT) => {
-  const generalOptions = generateOptionButtons({ options, handleClick }, 'general');
-  const studentOptions = generateOptionButtons({ options, handleClick }, 'student');
-  const mentorOptions = generateOptionButtons({ options, handleClick }, 'mentor');
+  const operations = [
+    generateOptionButtons({ options, handleClick }, 'basic'),
+    generateOptionButtons({ options, handleClick }, 'student'),
+    generateOptionButtons({ options, handleClick }, 'mentor'),
+  ];
+
+  const operationButtons = operations.map((operation, index) => {
+    return (
+      <ButtonCategoryContainer key={index}>{operation}</ButtonCategoryContainer>
+    );
+  });
 
   return {
-    generalOptions,
-    studentOptions,
-    mentorOptions,
+    operationButtons,
   };
 };
 

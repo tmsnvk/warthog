@@ -7,41 +7,41 @@ import {
 } from 'react-hook-form';
 import { PgFormContext } from '@context/PgFormContext.context';
 // component utilities.
-import { roleOptions } from './AddNewUser.utilities';
+import { roleOptions } from './CreateRecord.utilities';
 // component services.
-import { AddNewUser } from 'services/pg/user';
+import { basicOperations } from '@servicesPSQL/record';
 // component types.
 import {
-  AddNewUserErrorT,
-  AddNewUserParameterT,
-  AddNewUserReturnT,
-} from '@custom-types/pg/api/user/User.types';
+  CreateRecordErrorT,
+  CreateRecordParameterT,
+  CreateRecordReturnT,
+} from '@custom-types/pg/api/record/Record.types';
 
 // ** useSubmitForm | custom hook ** //
-// a custom hook to handle the 'AddNewUser' form submissions.
-const useSubmitForm = (setError: UseFormSetError<AddNewUserParameterT>) => {
+// a custom hook to handle the 'CreateRecord' form submissions.
+const useSubmitForm = (setError: UseFormSetError<CreateRecordParameterT>) => {
   // * custom context setup * //
-  const { setAddNewUserQueryData } = useContext(PgFormContext);
+  const { setCreateRecordQueryData } = useContext(PgFormContext);
 
   // * custom react-query useMutation setup * //
   const { mutate, reset } = useMutation({
-    mutationKey: ['addNewUser'],
-    mutationFn: async (parameters: AddNewUserParameterT): Promise<AddNewUserReturnT> => {
-      const userLoginResponse = await AddNewUser.addUser(parameters);
+    mutationKey: ['createRecord'],
+    mutationFn: async (parameters: CreateRecordParameterT): Promise<CreateRecordReturnT> => {
+      const response = await basicOperations.createRecord(parameters);
 
-      return userLoginResponse;
+      return response;
     },
-    onSuccess: (data: AddNewUserReturnT): void => {
-      setAddNewUserQueryData(data.data);
+    onSuccess: (data: CreateRecordReturnT): void => {
+      setCreateRecordQueryData(data.data);
       reset();
     },
-    onError: (error: AddNewUserErrorT): void => {
+    onError: (error: CreateRecordErrorT): void => {
       setError('root.serverError', { type: error.response.status, message: error.response.data.message });
     },
   });
 
   // * form submission controller. * //
-  const onSubmit: SubmitHandler<AddNewUserParameterT> = (formData: AddNewUserParameterT): void => {
+  const onSubmit: SubmitHandler<CreateRecordParameterT> = (formData: CreateRecordParameterT): void => {
     mutate(formData);
   };
 
@@ -51,7 +51,7 @@ const useSubmitForm = (setError: UseFormSetError<AddNewUserParameterT>) => {
 };
 
 // ** useGenerateOptions | custom hook ** //
-// a custom hook to generate the select option list located in the 'AddNewUser' form.
+// a custom hook to generate the select option list located in the 'CreateRecord' form.
 const useGenerateOptions = () => {
   const rolesOptions = roleOptions.map((option) => {
     return (

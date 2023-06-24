@@ -2,16 +2,17 @@
 import pool from '@config/pgConfig.config';
 // service models.
 import {
-  AddNewUserQueryType,
-  AddNewUserReturnType,
+  CreateRecordParameterT,
+  CreateRecordQueryT,
+  CreateRecordReturnT,
 } from '@custom-types/pg/user.types';
 
-// ** userService | service object ** //
+// ** basicOperationsService | service object ** //
 //
-const userService = {
-  async addNew(email: string, firstName: string, lastName: string, userRole: string, userId: string): Promise<AddNewUserReturnType> {
+const basicOperationsService = {
+  async createRecord({ email, firstName, lastName, role, id }: CreateRecordParameterT): Promise<CreateRecordReturnT> {
     try {
-      const { rows }: AddNewUserQueryType = await pool.query(`
+      const { rows }: CreateRecordQueryT = await pool.query(`
         INSERT INTO student_personal_data (
           email,
           first_name,
@@ -29,7 +30,7 @@ const userService = {
         )
         RETURNING
           created_at;
-      `, [email, firstName, lastName, userRole, userId]);
+      `, [email, firstName, lastName, role, id]);
 
       const dataToVisualise = [
         {
@@ -39,7 +40,7 @@ const userService = {
         },
         {
           pgCommandOpen: 'VALUES (',
-          dataFields: [email, firstName, lastName, userRole, userId, new Date(rows[0].created_at).toLocaleString()],
+          dataFields: [email, firstName, lastName, role, id, new Date(rows[0].created_at).toLocaleString()],
           pgCommandClose: ');',
         },
       ];
@@ -51,4 +52,4 @@ const userService = {
   },
 };
 
-export default userService;
+export default basicOperationsService;

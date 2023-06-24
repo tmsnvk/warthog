@@ -3,7 +3,7 @@ import { FormOptionsT } from '@pageComponents/PagePSQL/types/PagePSQL.types';
 
 export type FormSelectorT = {
   options: FormOptionsT;
-  handleClick: (btnName: string) => void;
+  handleClick: (buttonName: string) => void;
 }
 
 export type ButtonDescriptionT = {
