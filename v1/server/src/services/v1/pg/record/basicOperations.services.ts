@@ -13,7 +13,7 @@ const basicOperationsService = {
   async createRecord({ email, firstName, lastName, role, id }: CreateRecordParameterT): Promise<CreateRecordReturnT> {
     try {
       const { rows }: CreateRecordQueryT = await pool.query(`
-        INSERT INTO student_personal_data (
+        INSERT INTO people_records (
           email,
           first_name,
           last_name,
@@ -32,9 +32,23 @@ const basicOperationsService = {
           created_at;
       `, [email, firstName, lastName, role, id]);
 
-      const dataToVisualise = [
+      const tableVisualisation = [
         {
-          pgCommandOpen: 'INSERT INTO student_personal_data (',
+          tableName: 'people_records',
+          tableColumns: [
+            ['email', email],
+            ['first_name', firstName],
+            ['last_name', lastName],
+            ['user_type', role],
+            ['user_id', id],
+            ['created_at', new Date(rows[0].created_at).toLocaleString()],
+          ],
+        },
+      ];
+
+      const queryVisualisation = [
+        {
+          pgCommandOpen: 'INSERT INTO people_records (',
           dataFields: ['email', 'first_name', 'last_name', 'user_type', 'user_id', 'created_at'],
           pgCommandClose: ')',
         },
@@ -45,7 +59,10 @@ const basicOperationsService = {
         },
       ];
 
-      return dataToVisualise;
+      return {
+        tableVisualisation,
+        queryVisualisation,
+      };
     } catch (error: unknown) {
       console.error(error);
     }

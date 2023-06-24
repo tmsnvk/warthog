@@ -15,9 +15,9 @@ import {
 // ** createRecordController | contoller function ** //
 //
 const createRecordController = async (request: Request, response: Response<any>, next: NextFunction): Promise<void> => {
-  const { email, firstName, lastName, role } = request.body;
-
   try {
+    const { email, firstName, lastName, role } = request.body;
+
     if (!email || !firstName || !lastName || !role) {
       throw new Error('The form submission was incorrect. Fill in and submit the form again.');
     }
@@ -26,7 +26,7 @@ const createRecordController = async (request: Request, response: Response<any>,
     const serviceResponse: CreateRecordReturnT = await basicOperations.createRecord({ email, firstName, lastName, role, id });
 
     if (!serviceResponse) {
-      throw new Error('A user with this email address is already created in the database.');
+      throw new Error('A record with this email address is already present in the database.');
     }
 
     response.status(200).send(serviceResponse);

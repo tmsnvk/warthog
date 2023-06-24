@@ -2,16 +2,18 @@ import CreateRecord from './forms/basicOperations/CreateRecord';
 import FormContainer from './FormContainer';
 import FormSelector from './FormSelector';
 import PageContainer from './PageContainer';
-import QueryReturnData from './QueryReturnData';
+import QueryVisualisation from './QueryVisualisation';
 import OperationDescription from './OperationDescription';
 import VisualiseDataContainer from './VisualiseDataContainer';
+import TableVisualisation from './TableVisualisation';
 
 export {
   CreateRecord,
   FormContainer,
   FormSelector,
   PageContainer,
-  QueryReturnData,
+  QueryVisualisation,
   OperationDescription,
+  TableVisualisation,
   VisualiseDataContainer,
 };

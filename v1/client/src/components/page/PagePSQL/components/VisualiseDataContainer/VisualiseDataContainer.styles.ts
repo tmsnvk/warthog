@@ -5,7 +5,7 @@ import { GenericComponentContainer } from '@sharedComponents/wrappers';
 
 const VisualiseDataContainer = styled(GenericComponentContainer)`
   grid-column: 2 / 3;
-  grid-row: 3;
+  grid-row: 4;
   display: flex;
   flex-direction: column;
   padding: 5rem 0 5rem 7.5rem;

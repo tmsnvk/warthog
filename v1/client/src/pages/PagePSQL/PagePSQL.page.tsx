@@ -8,7 +8,8 @@ import {
   FormContainer,
   FormSelector,
   PageContainer,
-  QueryReturnData,
+  QueryVisualisation,
+  TableVisualisation,
   VisualiseDataContainer,
 } from '@pageComponents/PagePSQL/components';
 
@@ -24,8 +25,9 @@ const PagePSQL = () => {
       <FormContainer>
         {options[activeOptionIndex].formComponent}
       </FormContainer>
+      <TableVisualisation />
       <VisualiseDataContainer as={'section'}>
-        <QueryReturnData />
+        <QueryVisualisation />
       </VisualiseDataContainer>
     </PageContainer>
   );

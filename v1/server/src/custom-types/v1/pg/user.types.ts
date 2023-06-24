@@ -19,9 +19,15 @@ export type CreateRecordQueryT = {
 }
 
 export type CreateRecordReturnT = {
-  pgCommandOpen: string;
-  dataFields: (string | number)[];
-  pgCommandClose: string | undefined;
-}[] | undefined;
+  tableVisualisation: {
+    tableName: string;
+    tableColumns: string[][];
+  }[];
+  queryVisualisation: {
+    pgCommandOpen: string;
+    dataFields: (string | number)[];
+    pgCommandClose: string;
+  }[];
+} | undefined;
 
 // **  ** //

@@ -129,7 +129,7 @@ module.exports = {
     'keyword-spacing': 'warn',
     'line-comment-position': ['warn', { 'position': 'above' }],
     'max-len': ['warn', { 'code': 200, 'ignoreComments': true, 'ignoreUrls': true, 'ignoreTemplateLiterals': true, 'ignoreRegExpLiterals': true }],
-    'multiline-ternary': ['warn', 'never'],
+    'multiline-ternary': ['always-multiline', 'never'],
     'no-mixed-spaces-and-tabs': 'warn',
     'no-multi-spaces': 'warn',
     'no-multiple-empty-lines': 'warn',

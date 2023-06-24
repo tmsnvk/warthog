@@ -21,7 +21,7 @@ import {
 // a custom hook to handle the 'CreateRecord' form submissions.
 const useSubmitForm = (setError: UseFormSetError<CreateRecordParameterT>) => {
   // * custom context setup * //
-  const { setCreateRecordQueryData } = useContext(PgFormContext);
+  const { setTableVisualisation, setQueryVisualisation } = useContext(PgFormContext);
 
   // * custom react-query useMutation setup * //
   const { mutate, reset } = useMutation({
@@ -32,7 +32,8 @@ const useSubmitForm = (setError: UseFormSetError<CreateRecordParameterT>) => {
       return response;
     },
     onSuccess: (data: CreateRecordReturnT): void => {
-      setCreateRecordQueryData(data.data);
+      setTableVisualisation(data.data.tableVisualisation);
+      setQueryVisualisation(data.data.queryVisualisation);
       reset();
     },
     onError: (error: CreateRecordErrorT): void => {
